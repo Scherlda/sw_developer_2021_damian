@@ -12,7 +12,7 @@ I am interested in programming </br>
 
 Bild mit alternativ Text. Der Altertiv Text hat den Sinn, falls das Bild nicht dargestellt werden kann, wird der Text angezeigt.
 
-```jsx
+```
 ![Text_falls_das_bild_nicht_dargestelltwird](link_zum_bild.jpg)
 ```
 
@@ -20,7 +20,7 @@ Bild mit alternativ Text. Der Altertiv Text hat den Sinn, falls das Bild nicht d
 
 Mit der # können unterschiedlich starke überschriften definiert werden.
 
-```jsx
+```
 # Überschrift 1
 ## Überschrift 1.1
 ### überschrift 1.1.1
@@ -50,7 +50,7 @@ Mit []() können links und Texte welche über dem Link liegen definiert werden. (T
 
 Mit "```C#" kann ein Code Snipt für C# eingefügt werden, dies funktioniert auch mit anderen Sprachen (Java, C++, ...)
 
-```csharp
+```c#
 ```C#
 ```
 
