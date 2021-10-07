@@ -32,7 +32,7 @@ Mit der # können unterschiedlich starke überschriften definiert werden.
 
 Mit - kann ein Aufzählungspunkt erstellt werden.
 
-```jsx
+```
 - Punkt1
 - Punkt2
 - Punkt3
