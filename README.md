@@ -55,5 +55,4 @@ Mit "```C#" kann ein Code Snipt für C# eingefügt werden, dies funktioniert auch 
 ```
 
 ## And at the end, here is a sweet cat
-</br></br>And I love cats :)</br>
 ![Image_Cat](https://github.com/Scherlda/sw_developer_2021_damian/blob/main/docs/cat.jpg)
