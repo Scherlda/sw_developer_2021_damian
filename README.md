@@ -1,15 +1,16 @@
 # sw_developer_2021_damian
-### Hi. My name is Damian. </br>
+#### Hi. In this project I would like to report about the course I am doing at Wifi. </br>
 
+Every course day I take the train to and from the following destinations
+![https://www.google.at/maps/dir/Bludenz/WIFI+Vorarlberg,+Bahnhofstra%C3%9Fe+24,+6850+Dornbirn/@47.2864242,9.5669418,11z/am=t/data=!4m18!4m17!1m5!1m1!1s0x479b4fb7f02c4ad5:0x61b3dbdc7bb40f9c!2m2!1d9.80821!2d47.15991!1m5!1m1!1s0x479b6b4d2779efd3:0x7221e76893b8a22b!2m2!1d9.740043!2d47.4161097!2m3!6e1!7e2!8j1633711800!3e3](https://www.google.at/maps/dir/Bludenz/WIFI+Vorarlberg,+Bahnhofstra%C3%9Fe+24,+6850+Dornbirn/@47.2864242,9.5669418,11z/am=t/data=!4m18!4m17!1m5!1m1!1s0x479b4fb7f02c4ad5:0x61b3dbdc7bb40f9c!2m2!1d9.80821!2d47.15991!1m5!1m1!1s0x479b6b4d2779efd3:0x7221e76893b8a22b!2m2!1d9.740043!2d47.4161097!2m3!6e1!7e2!8j1633711800!3e3)
 
-
-## Nützliche Tools
+## NÃ¼tzliche Tools
 ### Notion
-Notion ist ein sehr nützliches Markup/HTML Notizen Programm.</br>
+Notion ist ein sehr nÃ¼tzliches Markup/HTML Notizen Programm.</br>
 Download: https://www.notion.so/
 
 ### Git-Fork
-Mittels Git-Fork hab man die Möglichkeit änderungen in Git Projekten deteiliert zu verfolgen.
+Mittels Git-Fork hab man die MÃ¶glichkeit Ã¤nderungen in Git Projekten deteiliert zu verfolgen.
 Download: https://git-fork.com/
 
 ## Markup Befehle
@@ -22,21 +23,21 @@ Bild mit alternativ Text. Der Altertiv Text hat den Sinn, falls das Bild nicht d
 ![Text_falls_das_bild_nicht_dargestelltwird](link_zum_bild.jpg)
 ```
 
-### Überschriften
+### Ãœberschriften
 
-Mit der # können unterschiedlich starke überschriften definiert werden.
+Mit der # kÃ¶nnen unterschiedlich starke Ã¼berschriften definiert werden.
 
 ```
-# Überschrift 1
-## Überschrift 1.1
-### überschrift 1.1.1
-#### Überschrift 1.1.1.1
-# Überschrift 2
+# Ãœberschrift 1
+## Ãœberschrift 1.1
+### Ã¼berschrift 1.1.1
+#### Ãœberschrift 1.1.1.1
+# Ãœberschrift 2
 ```
 
-### Aufzählungen
+### AufzÃ¤hlungen
 
-Mit - kann ein Aufzählungspunkt erstellt werden.
+Mit - kann ein AufzÃ¤hlungspunkt erstellt werden.
 
 ```
 - Punkt1
@@ -46,15 +47,15 @@ Mit - kann ein Aufzählungspunkt erstellt werden.
 
 ### Links
 
-Mit []() können links und Texte welche über dem Link liegen definiert werden. (Text wird statt dem Link angezeigt)
+Mit []() kÃ¶nnen links und Texte welche Ã¼ber dem Link liegen definiert werden. (Text wird statt dem Link angezeigt)
 
 ```jsx
 [https://link/to/site](Beispieltext statt dem Link)
 ```
 
-### Code Snipets einfügen
+### Code Snipets einfÃ¼gen
 
-Mit "```C#" kann ein Code Snipt für C# eingefügt werden, dies funktioniert auch mit anderen Sprachen (Java, C++, ...)
+Mit "```C#" kann ein Code Snipt fÃ¼r C# eingefÃ¼gt werden, dies funktioniert auch mit anderen Sprachen (Java, C++, ...)
 
 ```c#
 ```C#
