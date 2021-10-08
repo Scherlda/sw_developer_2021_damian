@@ -2,7 +2,7 @@
 #### Hi. In this project I would like to report about the course I am doing at Wifi. </br>
 
 Every course day I take the train to and from the following destinations
-{google_map}https://www.google.at/maps/dir/Bludenz/WIFI+Vorarlberg,+Bahnhofstra%C3%9Fe+24,+6850+Dornbirn/@47.2864242,9.5669418,11z/am=t/data=!4m18!4m17!1m5!1m1!1s0x479b4fb7f02c4ad5:0x61b3dbdc7bb40f9c!2m2!1d9.80821!2d47.15991!1m5!1m1!1s0x479b6b4d2779efd3:0x7221e76893b8a22b!2m2!1d9.740043!2d47.4161097!2m3!6e1!7e2!8j1633711800!3e3{/google_map}
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d173211.42763257457!2d9.566941829181044!3d47.28642418077256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x479b4fb7f02c4ad5%3A0x61b3dbdc7bb40f9c!2sBludenz!3m2!1d47.159909999999996!2d9.808209999999999!4m5!1s0x479b6b4d2779efd3%3A0x7221e76893b8a22b!2sWIFI%20Vorarlberg%2C%20Bahnhofstra%C3%9Fe%2024%2C%206850%20Dornbirn!3m2!1d47.4161097!2d9.740043!5e0!3m2!1sde!2sat!4v1633696372693!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
 ## Nützliche Tools
 ### Notion
