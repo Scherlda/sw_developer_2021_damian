@@ -4,9 +4,9 @@
 Every course day I take the train to and from the following destinations
 
 
-<p align="center" href="https://www.google.com/maps/dir/Bludenz,+Austria/WIFI+Vorarlberg,+Bahnhofstra%C3%9Fe+24,+6850+Dornbirn,+Austria/@47.2864246,9.567285,11z/am=t/data=!4m19!4m18!1m5!1m1!1s0x479b4fb7f02c4ad5:0x61b3dbdc7bb40f9c!2m2!1d9.80821!2d47.15991!1m5!1m1!1s0x479b6b4d2779efd3:0x7221e76893b8a22b!2m2!1d9.740043!2d47.4161097!2m3!6e1!7e2!8j1633712640!3e3!5i1?hl=de-de">
+<a align="center" href="https://www.google.com/maps/dir/Bludenz,+Austria/WIFI+Vorarlberg,+Bahnhofstra%C3%9Fe+24,+6850+Dornbirn,+Austria/@47.2864246,9.567285,11z/am=t/data=!4m19!4m18!1m5!1m1!1s0x479b4fb7f02c4ad5:0x61b3dbdc7bb40f9c!2m2!1d9.80821!2d47.15991!1m5!1m1!1s0x479b6b4d2779efd3:0x7221e76893b8a22b!2m2!1d9.740043!2d47.4161097!2m3!6e1!7e2!8j1633712640!3e3!5i1?hl=de-de">
   <img src="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/docs/maps_way.png" />
-</p>
+</a>
 
 ## 🔨 Nützliche Tools
 ### Notion
