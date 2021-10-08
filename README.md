@@ -7,7 +7,7 @@ Every course day I take the train to and from the following destinations
 
 ## 🔨 Nützliche Tools
 ### Notion
-Notion ist ein sehr nützliches Markup/HTML Notizen Programm.</br>
+Notion ist ein sehr nützliches Markup/HTML Notizen Programm. (Notion kann auch in Visual Studio Code integriert werden)</br>
 Download: https://www.notion.so/
 
 ### Git-Fork
