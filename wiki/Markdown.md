@@ -58,3 +58,5 @@ Mit "```C#" kann ein Code Snipt für C# eingefügt werden, dies funktioniert auc
 ```c#
 ```C#
 ```
+
+Noch mehr Infos stehen auf der offiziellen <a href="https://www.markdownguide.org/basic-syntax/#italic">markdownguide.org</a> Webseite
