@@ -29,6 +29,20 @@ Mit - kann ein Aufzählungspunkt erstellt werden.
 - Punkt3
 ```
 
+### Fetter Text
+Mit ** vor und nach einer Zeichenkette, kann ein fetter Text erzeugt werden.
+
+```
+** Fetter Text **
+```
+
+### Kursiver Text
+Mit * vor und nach einer Zeichenkette, kann ein Kursiver Text erzeugt werden.
+
+```
+* Kursiver Text *
+```
+
 ### Links
 
 Mit []() können links und Texte welche über dem Link liegen definiert werden. (Text wird statt dem Link angezeigt)
