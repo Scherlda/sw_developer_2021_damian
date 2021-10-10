@@ -1,6 +1,4 @@
-﻿# Markdown Language
-### Beschreibung
-
+﻿# Markup Language
 ### Bild
 
 Bild mit alternativ Text. Der Altertiv Text hat den Sinn, falls das Bild nicht dargestellt werden kann, wird der Text angezeigt.
@@ -47,3 +45,7 @@ Mit "```C#" kann ein Code Snipt für C# eingefügt werden, dies funktioniert auc
 ```C#
 ```
 
+## And at the end, here is a sweet 🐈‍⬛
+<p align="center">
+<img src="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/docs/cat.jpg" alt="catPicture" width="500"/>
+</p>
