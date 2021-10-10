@@ -44,8 +44,3 @@ Mit "```C#" kann ein Code Snipt für C# eingefügt werden, dies funktioniert auc
 ```c#
 ```C#
 ```
-
-## And at the end, here is a sweet 🐈‍⬛
-<p align="center">
-<img src="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/docs/cat.jpg" alt="catPicture" width="500"/>
-</p>
