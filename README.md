@@ -11,7 +11,7 @@ I am doing this course as the first step on the way to my own business.
 </a>
 </div>
 
-## 🔨 Nützliche Tools
+## 🔨 Useful Tools
 ### Notion
 Notion is a very useful markup/HTML notes program. (Notion can also be integrated into Visual Studio code).</br>
 Download: https://www.notion.so/
