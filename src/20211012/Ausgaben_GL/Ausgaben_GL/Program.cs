@@ -19,7 +19,7 @@ namespace Ausgaben_GL
             //Console.WriteLine("Hallo\n\tzusammen");
             //Console.WriteLine("\t\tHallo\nzusammen\a");
 
-            Console.SetCursorPosition(10, 2);
+            Console.SetCursorPosition(10, 2);   //Setzt die Courser Position an eine bestimmte Stelle in der Conosle.
             Console.WriteLine("Name: Damian");
             Console.SetCursorPosition(2, 3);
             Console.WriteLine("Geburts Jahr: 2000");
@@ -28,8 +28,6 @@ namespace Ausgaben_GL
             Console.SetCursorPosition(8, 6);
             Console.WriteLine("C# ist eine tolle Sache!");
             
-
-
             Console.ReadLine();
 
         }
