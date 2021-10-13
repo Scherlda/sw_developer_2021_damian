@@ -22,6 +22,7 @@ Download: https://git-fork.com/
 
 ## Knowledge
 <a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Markdown.md">Markdown Language</a>
+<a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Console_in_output.md">Console in/output</a>
 
 ## And at the end, here is a sweet 🐈‍⬛
 <p align="center">
