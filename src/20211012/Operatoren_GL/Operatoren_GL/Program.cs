@@ -29,6 +29,19 @@ namespace Operatoren_GL
             //&& | && || !
 
             //Zusammengesetzte Operatoren
+            int eineZahl = 5;
+            eineZahl = eineZahl + 5;
+            //Kurzform
+            eineZahl += 5;
+            eineZahl -= 8;
+            eineZahl *= 2;
+            eineZahl /= 3;
+            //inkrementieren
+            eineZahl++;
+            //dekrementieren
+            eineZahl--;
+
+
 
 
         }
