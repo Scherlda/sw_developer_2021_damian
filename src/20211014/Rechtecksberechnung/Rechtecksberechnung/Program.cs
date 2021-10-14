@@ -43,7 +43,6 @@ namespace Rechtecksberechnung
             Console.Write("Die Seitenlänge a ist: {0}\nDie Seitenlänge b ist: {1}\n\n", a, b);
             Console.Write("Umgabeberechnung: u = 2 * (a + b)\n\nDer Umfang ist: {0}\n", u);
 
-
         }
     }
 }
