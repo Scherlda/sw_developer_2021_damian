@@ -35,8 +35,12 @@ namespace Uebungen_Datentypen_rechnen
 
             //Math Klasse
             //Gibt die höhere Zahl aus
-            Console.WriteLine(Math.Max(zahl1, zahl2));
-            Console.WriteLine(Math.Ceiling(zahl1));
+            Console.WriteLine("Die höhere Zahl ist: {0}",Math.Max(zahl1, zahl2));
+            //Zahl1 hoch Zahl2
+            Console.WriteLine("Zahl1 hoch Zahl2 = {0}", Math.Pow(zahl1, zahl2));
+            //Quadratwurzel
+            Console.WriteLine("Die Quadratwurzel von Zahl1 ist: {0}", Math.Sqrt(zahl1));
+
 
             Console.ReadKey();
 
