@@ -12,7 +12,7 @@ namespace Uebungen_Datentypen_rechnen
         {
             double zahl1;
             double zahl2;
-          //  double zahl3;
+            double zahl3 = 0;
 
             Console.Write("Bitte gib deine erste Zahl ein: ");
             zahl1 = Convert.ToDouble(Console.ReadLine());
@@ -40,6 +40,9 @@ namespace Uebungen_Datentypen_rechnen
             Console.WriteLine("Zahl1 hoch Zahl2 = {0}", Math.Pow(zahl1, zahl2));
             //Quadratwurzel
             Console.WriteLine("Die Quadratwurzel von Zahl1 ist: {0}", Math.Sqrt(zahl1));
+            //Kreis berechnen
+            zahl3 = 2 * zahl1 * Math.PI;
+            Console.WriteLine("Der Kreisumfang mit Zahl1 ist: {0}",zahl3);
 
 
             Console.ReadKey();
