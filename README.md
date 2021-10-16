@@ -21,8 +21,9 @@ With Git Fork you have the possibility to track changes in Git projects in detai
 Download: https://git-fork.com/
 
 ## Knowledge
-<a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Markdown.md">Markdown Language</a>
-<a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Console_in_output.md">Console in/output</a>
+<a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Markdown.md">Markdown Language</a></br>
+<a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Console_in_output.md">Console in/output</a></br>
+<a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Try_catch_finally.md">Console in/output</a></br>
 
 ## And at the end, here is a sweet 🐈‍⬛
 <p align="center">
