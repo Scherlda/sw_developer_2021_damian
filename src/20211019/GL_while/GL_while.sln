@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GL_while", "GL_while\GL_while.csproj", "{1B48B404-4EAA-487A-979D-6217B2F6B820}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B48B404-4EAA-487A-979D-6217B2F6B820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B48B404-4EAA-487A-979D-6217B2F6B820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B48B404-4EAA-487A-979D-6217B2F6B820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B48B404-4EAA-487A-979D-6217B2F6B820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02CD2D4C-6806-4234-9521-B9E85641BB79}
+	EndGlobalSection
+EndGlobal
