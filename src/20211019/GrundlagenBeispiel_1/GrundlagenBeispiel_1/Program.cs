@@ -119,7 +119,8 @@ namespace GrundlagenBeispiel_1
             Console.WriteLine($"{SozialvNummer} {userGeburtstag.Day}{userGeburtstag.Month}{userGeburtstag.Year}");
             Console.WriteLine($"{SozialvNummer} {userGeburtstag.ToString("ddMMyy")}"); //DateTime in einen String mit bestimmter Formatierung Convertieren durch die c""
             
-
+            string textzahl = "123";
+            int zahl = int.Parse(textzahl);
 
         }
     }

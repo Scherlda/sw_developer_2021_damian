@@ -36,6 +36,20 @@ Beispiele
 Console.WriteLine(@"Mein\nName")
 string speicherort = @"C:\path\to\file"
 ```
+### String inhalt in Groß/Kleinbuchstaben ausgeben
+
+```csharp
+string inhalt = "Ich bin ein Inhalt";
+string inhaltgros = inhalt.ToUpper();
+string inhaltklein = inhalt.ToLower();
+Console.WriteLine(inhaltgros \n inhaltklein)
+```
+
+Ausgabe
+```
+ICH BIN EIN INHALT
+ich bin ein inhalt
+```
 
 ## Eingabe
 
