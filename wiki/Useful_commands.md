@@ -29,3 +29,14 @@ In diesem Beispiel wird das Datum in einen String mit bestimmten Vorgaben konver
 ```csharp
 Console.WriteLine($"{beispielDatum.ToString("ddMMyy")}")
 ```
+### Sleep (Warten)
+
+Mit dem Befehl Thread.Slepp(1000) kann die aktuelle aktion für eine bestimmte Zeit angehalten werden. In diesem fall 1000 = 1 Sekunde.
+
+Hierfür muss allerding das using System.Threading hinzugefürt werden.
+
+```csharp
+Console.WriteLine("Bitte warten");
+Thread.Sleep(1000);
+Console.WriteLine("Hallo");
+```
