@@ -52,7 +52,7 @@ Bei der Explizieten Konvertierung wird im Normalfall in einen niedrigeren/kleine
 So gehen beispielsweise komma stellen verloren.
 
 ```csharp
-double grosseZahl = 123,30;
+double grosseZahl = 123.30;
 int kleineZahl = 123;
 kleineZahl = (int)grosseZahl;
 Console.WriteLine(kleineZahl); //Ausgabe: 123
