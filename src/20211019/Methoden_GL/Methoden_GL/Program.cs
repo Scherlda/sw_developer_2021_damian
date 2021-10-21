@@ -15,16 +15,28 @@ namespace Methoden_GL
             string name = "Gandalf";
 
             PrintMessage(name);
-            PrintMessage(Console.ReadLine());
+            PrintColorMessage("PAUSE!\n", ConsoleColor.Yellow);
+        }
+
+        static void PrintColorMessage(string message, ConsoleColor messageColor)    //Datentyp, Variablenbezeichnung
+        {
+            ConsoleColor oldColor = Console.ForegroundColor;
+            Console.ForegroundColor = messageColor;
+
+            Console.Write(message);
+
+            Console.ForegroundColor = oldColor;
+            //Jetzt hat die Methode den Vorteil das sie den Orginalzustand wiederherstellt und somit etwas einmalig ohne spuren zu hinterlassen ausführt.
         }
 
         static void PrintMessage(string message)
         {
+            message += "Damian"; //Das nennt man Hack, jetzt hat message immer den Wert Damian hinten dran (durch das + wird es hinten angehängt)
             Console.WriteLine(message);
         }
 
         //Signatur
-        //RückgabeTyp MethodenBezeichnung(Parameter)
+        //RückgabeTyp MethodenBezeichnung(Parameter ParameterBezeichnung)
         static void PrinterHelloWorld()
         {
             Console.WriteLine("Hello World");
