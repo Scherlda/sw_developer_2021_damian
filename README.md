@@ -23,10 +23,10 @@ Download: https://git-fork.com/
 ## .NET Coding Guidelines
 As coding guidelines we rely on the recommendations of the technology manufacturer Microsoft. The recommendations includes convension for
 
-naming
-code layout
-commenting and
-C# language guidelines.
+* naming
+* code layout
+* commenting and
+* C# language guidelines. </br>
 For details see <a href ="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions">Microsoft Coding Conventions!</a>
 
 ## Knowledge
