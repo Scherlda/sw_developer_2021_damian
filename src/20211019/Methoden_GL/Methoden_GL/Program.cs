@@ -16,8 +16,48 @@ namespace Methoden_GL
 
             PrintMessage(name);
             PrintColorMessage("PAUSE!\n", ConsoleColor.Yellow);
+
+            double gesamtGewicht = CalculateWeight(5, 1.3145);
+            Console.WriteLine(gesamtGewicht);
+
+            PrintColorMessage("Error: Hier ist was passiert.\n");
+            PrintColorMessage("Error: Hier ist was passiert.\n", ConsoleColor.Blue);
+
+            
         }
 
+        //Methoden sollen kurz bleiben.
+        //Methoden sollten Maximal eine bildschirmseite lang sein.
+
+        static double CalculateWeight(int count, double weightPerPice)
+        {
+            double result = 0.0;
+
+            result = weightPerPice * count;
+
+            return result;
+
+        }
+
+        // ÜberladungsMethode, diese und die folgende Methode sind ident (Alles muss ident sein auch die Varialben Namen)
+        // nur haben sie unterschiedlich viele Varialben, somit bekommt die Varialbe PrintColorMessage überladungen
+        /// <summary>
+        /// Print a colored message to default Output-Stream on the console.
+        /// </summary>
+        /// <param name="message">The message which should displayed</param>
+        /// <param name="messageColor">The color the provided message hould be displayed</param>
+        static void PrintColorMessage(string message) //Diese Methode gibt immer roten Text aus. Überladungen sollten immer möglichst den selben Code haben, dehasalb wird hier einfach die andere Methode aufgerufen und die Farbe mitgegeben
+        {
+            PrintColorMessage(message, ConsoleColor.Red);
+        }
+
+        // mit drei mal / kann die Doku für den Aufruf der Methode erstellt werden. (wird angezeigt wenn im Vorschlag die Methode angewählt wird.)
+
+        /// <summary>
+        /// Print a colored message to default Output-Stream on the console.
+        /// </summary>
+        /// <param name="message">The message which should displayed</param>
+        /// <param name="messageColor">The color the provided message hould be displayed</param>
         static void PrintColorMessage(string message, ConsoleColor messageColor)    //Datentyp, Variablenbezeichnung
         {
             ConsoleColor oldColor = Console.ForegroundColor;
