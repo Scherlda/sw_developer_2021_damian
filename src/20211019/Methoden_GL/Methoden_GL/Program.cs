@@ -45,7 +45,6 @@ namespace Methoden_GL
         /// Print a colored message to default Output-Stream on the console.
         /// </summary>
         /// <param name="message">The message which should displayed</param>
-        /// <param name="messageColor">The color the provided message hould be displayed</param>
         static void PrintColorMessage(string message) //Diese Methode gibt immer roten Text aus. Überladungen sollten immer möglichst den selben Code haben, dehasalb wird hier einfach die andere Methode aufgerufen und die Farbe mitgegeben
         {
             PrintColorMessage(message, ConsoleColor.Red);
