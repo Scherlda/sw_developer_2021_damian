@@ -20,6 +20,15 @@ Download: https://www.notion.so/
 With Git Fork you have the possibility to track changes in Git projects in detail.
 Download: https://git-fork.com/
 
+## .NET Coding Guidelines
+As coding guidelines we rely on the recommendations of the technology manufacturer Microsoft. The recommendations includes convension for
+
+naming
+code layout
+commenting and
+C# language guidelines.
+For details see <a href ="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions">Microsoft Coding Conventions!</a>
+
 ## Knowledge
 <a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Useful_commands.md">Usefull Commands</a></br>
 <a href="https://github.com/Scherlda/sw_developer_2021_damian/blob/main/wiki/Markdown.md">Markdown Language</a></br>
