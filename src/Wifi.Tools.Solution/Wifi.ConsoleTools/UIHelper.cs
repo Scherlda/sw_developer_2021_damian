@@ -8,6 +8,7 @@ namespace Wifi.ConsoleTools
 {
     public class UIHelper
     {
+        //Aus class Library erzeugt
         /// <summary>
         /// Print a colored message to default Output-Stream on the console.
         /// </summary>
