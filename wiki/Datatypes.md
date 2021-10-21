@@ -36,6 +36,12 @@ string textzahl= "123";
 int zahl = Convert.ToInt32(textzahl);
 int zahl = int zahl = int.Parse(textzahl);
 ```
+##### TryParse
+Parse kann mittels TryParse auch einen bool zurück geben, so kann dieser in eine bool variable gespeichert werden.
+
+```csharp
+bool userEnterdANumber = int.TryParse(temperatureInput, out number)
+```
 
 ##### Inplizite Konvertierung
 
