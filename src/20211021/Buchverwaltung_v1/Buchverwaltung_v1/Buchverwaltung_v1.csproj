@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MyTools.ConsoleTools">
+    <Reference Include="MyTools.ConsoleTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\MyTools\MyTools.ConsoleTools\bin\Debug\MyTools.ConsoleTools.dll</HintPath>
     </Reference>
     <Reference Include="System" />

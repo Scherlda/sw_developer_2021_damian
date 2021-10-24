@@ -34,27 +34,16 @@ namespace Buchverwaltung_v1
            *  
            */
 
-            //Frames
-            // ╔══╦══╗
-            // ║  ║  ║ 
-            // ╠══╬══╣
-            // ║  ║  ║
-            // ╚══╩══╝
-            string headerText = "Buchverwaltung_v1";
-            int xPosition = Console.WindowWidth / 2 - headerText.Length / 2;
+            while (true)
+            {
+                MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
+                BookInfos.ReadBookInfos();
 
-            Console.Write("╔" + new string('═', Console.WindowWidth - 2) + "╗");
-            Console.Write("║");
-            Console.SetCursorPosition(xPosition, 1);
-            Console.Write(headerText);
-            Console.SetCursorPosition(Console.WindowWidth - 1, 1);
-            Console.Write("║");
-            Console.Write("╚" + new string('═', Console.WindowWidth - 2) + "╝");
+                Console.ReadKey();
+                Console.Clear();
+            }
 
-            //MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
-            BookInfos.ReadBookInfos();
-
-            Console.ReadKey();
+            
 
         }
 
