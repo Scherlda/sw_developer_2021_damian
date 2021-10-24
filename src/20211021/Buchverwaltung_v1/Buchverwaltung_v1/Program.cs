@@ -15,9 +15,11 @@ namespace Buchverwaltung_v1
            * 
            *  - Titel
            *  - Autor
+           *  - Kategorie
+           *  - Seitenanzahl
            *  - Erscheinungsjahr
-           *  - IBAN
            *  - Preis
+           *  - IBAN
            *  
            *  Dabei gilt:
            *  
@@ -32,12 +34,30 @@ namespace Buchverwaltung_v1
            *  
            */
 
+            //Frames
+            // ╔══╦══╗
+            // ║  ║  ║ 
+            // ╠══╬══╣
+            // ║  ║  ║
+            // ╚══╩══╝
+            string headerText = "Buchverwaltung_v1";
+            int xPosition = Console.WindowWidth / 2 - headerText.Length / 2;
 
+            Console.Write("╔" + new string('═', Console.WindowWidth - 2) + "╗");
+            Console.Write("║");
+            Console.SetCursorPosition(xPosition, 1);
+            Console.Write(headerText);
+            Console.SetCursorPosition(Console.WindowWidth - 1, 1);
+            Console.Write("║");
+            Console.Write("╚" + new string('═', Console.WindowWidth - 2) + "╝");
 
-            Console.WriteLine(new string('#', Console.WindowWidth - 1));
+            //MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
+            BookInfos.ReadBookInfos();
 
-
+            Console.ReadKey();
 
         }
+
+        
     }
 }
