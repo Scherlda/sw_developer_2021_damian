@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace Buchverwaltung_v1
         public static DateTime BookYearOfPublication;
         public static string BookPrice;
         public static string CustomerIBAN;
+        //private static string UserInput;
         private static bool IsUserInputCorrect = false;
         public static void ReadBookInfos()
         {
@@ -27,17 +29,13 @@ namespace Buchverwaltung_v1
             Console.WriteLine("\tErscheinungsjahr: ");
             Console.WriteLine("\tPreis: ");
             Console.WriteLine("\tKunde-IBAN: ");
+            SetBookNumberPages();
 
         }
 
         public static void SetBookTitel()
         {
-            do
-            {
-                Console.SetCursorPosition(30, 7);
-            } while (IsUserInputCorrect == false);
-            
-
+            Console.SetCursorPosition(30, 7);
             BookTitel = Console.ReadLine();
         }
         public static void SetBookAuthor()
@@ -48,8 +46,32 @@ namespace Buchverwaltung_v1
 
         public static void SetBookNumberPages()
         {
-            Console.SetCursorPosition(30, 9);
-            BookNumberPages = Console.ReadLine();
+            do
+            {
+                int waitTimeNewInput = 3000;
+                Console.SetCursorPosition(30, 9);
+                //string UserInput = Console.ReadLine();
+
+                while (!int.TryParse(Console.ReadLine(), out int BookNumberPages))
+                {
+                    
+                    do
+                    {
+                        Console.SetCursorPosition(30, 9);
+                        Console.Write($"Es sind nur Zahlen erlaubt! Versuche es erneut in {waitTimeNewInput.ToString().Trim('0')} Sekunden"); 
+                        Thread.Sleep(1000);
+                        waitTimeNewInput -= 1000;
+                    } while (waitTimeNewInput > 0);
+                    
+                    waitTimeNewInput = 3000;
+                    Console.SetCursorPosition(30, 9);
+                    Console.Write(new string(' ', Console.WindowWidth - 31));
+                    Console.SetCursorPosition(30, 9);
+                    
+                }
+
+            } while (IsUserInputCorrect == false);
+            
         }
         public static void SetBookYearOfPublication()
         {
