@@ -11,15 +11,16 @@ namespace Buchverwaltung_v1
     {
         public static string BookTitel;
         public static string BookAuthor;
-        public static string BookNumberPages; //How many Sites are in the Book
+        public static int BookNumberPages; //How many Sites are in the Book
         public static DateTime BookYearOfPublication;
-        public static string BookPrice;
+        public static double BookPrice;
         public static string CustomerIBAN;
-        //private static string UserInput;
-        private static bool IsUserInputCorrect = false;
+       
+       
         public static void ReadBookInfos()
         {
             string yearClibboard = string.Empty;
+
             //User interaktion
     //Noch einen Rahmen Zeichen?
             Console.WriteLine("\n\nBitte geben Sie folgende Daten für die Buchanlage ein:\n");
@@ -27,62 +28,51 @@ namespace Buchverwaltung_v1
             Console.WriteLine("\tAuthor: ");
             Console.WriteLine("\tAnzahl der Seiten: ");
             Console.WriteLine("\tErscheinungsjahr: ");
-            Console.WriteLine("\tPreis: ");
+            Console.WriteLine("\tPreis (xx,yy): ");
             Console.WriteLine("\tKunde-IBAN: ");
+
+            SetBookTitel();
+            SetBookAuthor();
             SetBookNumberPages();
+            SetBookYearOfPublication();
+            SetBookPrice();
+            SetCustomerIBAN();
 
         }
 
         public static void SetBookTitel()
         {
-            Console.SetCursorPosition(30, 7);
-            BookTitel = Console.ReadLine();
+            bool bookAlreadyEsxit = false;
+            
+            do
+            {
+                BookTitel = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 7, 2000);
+                // If abfrage
+
+            } while (true);
+            
+           
+            
+            // BookTitel = Console.ReadLine();
         }
         public static void SetBookAuthor()
         {
-            Console.SetCursorPosition(30, 8);
-            BookAuthor = Console.ReadLine();
+            //Console.SetCursorPosition(30, 8);
+            BookAuthor = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 8, 2000);
         }
 
         public static void SetBookNumberPages()
         {
-            do
-            {
-                int waitTimeNewInput = 3000;
-                Console.SetCursorPosition(30, 9);
-                //string UserInput = Console.ReadLine();
-
-                while (!int.TryParse(Console.ReadLine(), out int BookNumberPages))
-                {
-                    
-                    do
-                    {
-                        Console.SetCursorPosition(30, 9);
-                        Console.Write($"Es sind nur Zahlen erlaubt! Versuche es erneut in {waitTimeNewInput.ToString().Trim('0')} Sekunden"); 
-                        Thread.Sleep(1000);
-                        waitTimeNewInput -= 1000;
-                    } while (waitTimeNewInput > 0);
-                    
-                    waitTimeNewInput = 3000;
-                    Console.SetCursorPosition(30, 9);
-                    Console.Write(new string(' ', Console.WindowWidth - 31));
-                    Console.SetCursorPosition(30, 9);
-                    
-                }
-
-            } while (IsUserInputCorrect == false);
-            
+            BookNumberPages = MyTools.ConsoleTools.CheckUserInput.Int_CheckInputAndRepositionMouse(30, 9, 2000); //Position von links, von oben und Timer wie lange ein Meldung angezeigt werden soll.
         }
         public static void SetBookYearOfPublication()
         {
-            string yearClibboard = string.Empty;
-            Console.SetCursorPosition(30, 10);
-            yearClibboard = Console.ReadLine();
+            BookInfos.BookYearOfPublication = MyTools.ConsoleTools.CheckUserInput.DateYear_CheckInputAndRepositionMouse(30, 10, 2000);
         }
         public static void SetBookPrice()
         {
             Console.SetCursorPosition(30, 11);
-            BookPrice = Console.ReadLine();
+            BookPrice = MyTools.ConsoleTools.CheckUserInput.Double_CheckInputAndRepositionMouse(30, 11, 2000);
         }
         public static void SetCustomerIBAN()
         {

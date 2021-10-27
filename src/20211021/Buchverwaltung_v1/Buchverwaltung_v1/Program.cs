@@ -30,7 +30,7 @@ namespace Buchverwaltung_v1
            *     Bsp. Buch Titel = "Die unendliche Geschichte" => DieunendlicheGeschichte.book
            *  
            *  4. Bauae das Program so um, dass der User beliebig viele Bücher eingeben kann und jedes 
-           *     Buch nach der Eingabe automatisch abgespeichert wird. (Gibt es das Buch bereits, soll die Datei )
+           *     Buch nach der Eingabe automatisch abgespeichert wird. (Gibt es das Buch bereits, soll die Datei ersetzt werden)
            *  
            */
 
@@ -39,6 +39,8 @@ namespace Buchverwaltung_v1
                 MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
                 BookInfos.ReadBookInfos();
 
+                Console.WriteLine(BookInfos.BookYearOfPublication);
+                Console.WriteLine(BookInfos.BookPrice);
                 Console.ReadKey();
                 Console.Clear();
             }
