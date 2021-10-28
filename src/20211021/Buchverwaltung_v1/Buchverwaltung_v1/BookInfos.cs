@@ -42,18 +42,8 @@ namespace Buchverwaltung_v1
 
         public static void SetBookTitel()
         {
-            bool bookAlreadyEsxit = false;
+            BookTitel = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 7, 2000);
             
-            do
-            {
-                BookTitel = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 7, 2000);
-                // If abfrage
-
-            } while (true);
-            
-           
-            
-            // BookTitel = Console.ReadLine();
         }
         public static void SetBookAuthor()
         {
@@ -63,7 +53,7 @@ namespace Buchverwaltung_v1
 
         public static void SetBookNumberPages()
         {
-            BookNumberPages = MyTools.ConsoleTools.CheckUserInput.Int_CheckInputAndRepositionMouse(30, 9, 2000); //Position von links, von oben und Timer wie lange ein Meldung angezeigt werden soll.
+            BookNumberPages = MyTools.ConsoleTools.CheckUserInput.Int_CheckInputAndRepositionMouse(30, 9, 2000); //Position von links, von oben und Timer wie lange eine Meldung angezeigt werden soll.
         }
         public static void SetBookYearOfPublication()
         {

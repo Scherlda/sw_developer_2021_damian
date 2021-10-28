@@ -34,16 +34,42 @@ namespace Buchverwaltung_v1
            *  
            */
 
-            while (true)
-            {
-                MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
-                BookInfos.ReadBookInfos();
+            bool endProgram = false;
+            bool inputWasCorrect = false;
 
-                Console.WriteLine(BookInfos.BookYearOfPublication);
-                Console.WriteLine(BookInfos.BookPrice);
-                Console.ReadKey();
-                Console.Clear();
-            }
+            do
+            {
+                do
+                {
+                    Console.Clear();
+                    MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
+                    BookInfos.ReadBookInfos();
+                    BookToFile.EveryBookToOwnFile();
+
+                    Console.WriteLine("\nSind Sie mit den Eingaben zufrieden oder möchten Sie alle eingaben leeren?\n1 für zufrieden\n2 für alles leeren");
+                    if (Console.ReadLine() == "1")
+                    {
+                        inputWasCorrect = true;
+                    }
+                    else
+                    {
+                        inputWasCorrect = false;
+                    }
+                } while (inputWasCorrect == false);
+                
+                
+
+                Console.WriteLine("\nMöchte Sie ein weiteres Buch eingeben oder das Program beenden?\n1 für ein zusätzliches Buch\n2 um das Program zu beenden");
+                if (Console.ReadLine() == "2")
+                {
+                    endProgram = true;
+                }
+                else
+                {
+                    endProgram = false;
+                }
+
+            }while(endProgram == false);
 
             
 
