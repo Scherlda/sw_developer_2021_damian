@@ -34,7 +34,6 @@ namespace Buchverwaltung_v1
            *  
            */
 
-            bool endProgram = false;
             bool inputWasCorrect = false;
 
             do
@@ -46,7 +45,7 @@ namespace Buchverwaltung_v1
                     BookInfos.ReadBookInfos();
                     BookToFile.EveryBookToOwnFile();
 
-                    Console.WriteLine("\nSind Sie mit den Eingaben zufrieden oder möchten Sie alle eingaben leeren?\n1 für zufrieden\n2 für alles leeren");
+                    Console.WriteLine("\nSind Sie mit den Eingaben zufrieden oder möchten Sie alle Eingaben leeren?\n1 für zufrieden\n2 für alles leeren");
                     if (Console.ReadLine() == "1")
                     {
                         inputWasCorrect = true;
@@ -59,17 +58,11 @@ namespace Buchverwaltung_v1
                 
                 
 
-                Console.WriteLine("\nMöchte Sie ein weiteres Buch eingeben oder das Program beenden?\n1 für ein zusätzliches Buch\n2 um das Program zu beenden");
-                if (Console.ReadLine() == "2")
-                {
-                    endProgram = true;
-                }
-                else
-                {
-                    endProgram = false;
-                }
+                Console.WriteLine("\nDas Buch wurde gespeichert. Betätigen Sie eine beliebige Taste um ein weiteres Buch anzulegen");
+                Console.ReadKey();
+                
 
-            }while(endProgram == false);
+            }while(true);
 
             
 

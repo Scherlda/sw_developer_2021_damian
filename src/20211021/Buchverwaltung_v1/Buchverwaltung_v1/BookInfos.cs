@@ -9,6 +9,7 @@ namespace Buchverwaltung_v1
 {
     internal class BookInfos
     {
+        //Attributes from Book
         public static string BookTitel;
         public static string BookAuthor;
         public static int BookNumberPages; //How many Sites are in the Book
@@ -21,8 +22,8 @@ namespace Buchverwaltung_v1
         {
             string yearClibboard = string.Empty;
 
-            //User interaktion
-    //Noch einen Rahmen Zeichen?
+            //User interaction
+            //Noch einen Rahmen Zeichen?
             Console.WriteLine("\n\nBitte geben Sie folgende Daten für die Buchanlage ein:\n");
             Console.WriteLine("\tTitel: ");
             Console.WriteLine("\tAuthor: ");
@@ -31,6 +32,7 @@ namespace Buchverwaltung_v1
             Console.WriteLine("\tPreis (xx,yy): ");
             Console.WriteLine("\tKunde-IBAN: ");
 
+            //Fill all attribute variables
             SetBookTitel();
             SetBookAuthor();
             SetBookNumberPages();
