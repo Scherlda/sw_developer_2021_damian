@@ -34,27 +34,51 @@ namespace Buchverwaltung_v1
            *  
            */
 
-            bool inputWasCorrect = false;
+            
 
             do
             {
+                bool inputIsCorrect = false;
+                bool userInputWasCorrect = false;
                 do
                 {
+
                     Console.Clear();
                     MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
                     BookInfos.ReadBookInfos();
-                    BookToFile.EveryBookToOwnFile();
+                    
 
-                    Console.WriteLine("\nSind Sie mit den Eingaben zufrieden oder möchten Sie alle Eingaben leeren?\n1 für zufrieden\n2 für alles leeren");
-                    if (Console.ReadLine() == "1")
+                    //User soll Seine Eingaben prüfen
+                    do
                     {
-                        inputWasCorrect = true;
-                    }
-                    else
+                        Console.WriteLine("\nSind Sie mit den Eingaben zufrieden oder möchten Sie alle Eingaben leeren?\n1 für zufrieden\n2 für alles leeren");
+                        string userInput = Console.ReadLine();
+                        if (userInput == "1")
+                        {
+                            inputIsCorrect = true;
+                            userInputWasCorrect = true;
+                        }
+                        else if (userInput == "2")
+                        {
+                            inputIsCorrect = false;
+                            userInputWasCorrect = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Die Eingabe war ungültig");
+                            userInputWasCorrect= false;
+                        }
+
+                    } while (userInputWasCorrect == false);
+
+                    //Wenn alle Eingaben gepasst haben, wird das Buchgespeichert
+                    if (inputIsCorrect)
                     {
-                        inputWasCorrect = false;
+                        BookToFile.EveryBookToOwnFile();
                     }
-                } while (inputWasCorrect == false);
+                    
+
+                } while (inputIsCorrect == false);
                 
                 
 

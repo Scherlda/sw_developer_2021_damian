@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Buchverwaltung_v1
 {
@@ -24,6 +25,7 @@ namespace Buchverwaltung_v1
 
             //User interaction
             //Noch einen Rahmen Zeichen?
+            
             Console.WriteLine("\n\nBitte geben Sie folgende Daten für die Buchanlage ein:\n");
             Console.WriteLine("\tTitel: ");
             Console.WriteLine("\tAuthor: ");
@@ -39,7 +41,6 @@ namespace Buchverwaltung_v1
             SetBookYearOfPublication();
             SetBookPrice();
             SetCustomerIBAN();
-
         }
 
         public static void SetBookTitel()
@@ -68,9 +69,43 @@ namespace Buchverwaltung_v1
         }
         public static void SetCustomerIBAN()
         {
-            Console.SetCursorPosition(30, 12);
-            CustomerIBAN = Console.ReadLine();
+            bool ibanIsOk = false;
+            int positionLeft = 30;
+            int positionTop = 12;
+            int timeForSleep = 2000;
+            int waitTimeNewInput = timeForSleep;
+
+            do
+            {
+                
+                Console.SetCursorPosition(positionLeft, positionTop);
+                Console.Write("XXzzzzzzzzzzzzzzzzzz");
+                Console.SetCursorPosition(positionLeft, positionTop);
+                CustomerIBAN = Console.ReadLine();
+
+                //Überprüft op der IBAN Korrekt eingegeben wurde
+                ibanIsOk = Regex.IsMatch(CustomerIBAN, @"[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}");
+                
+                if (!ibanIsOk)
+                {
+                    do
+                    {
+                        Console.SetCursorPosition(positionLeft, positionTop);
+                        Console.Write($"format stimmt nicht mit dem IBAN überein! Versuche es erneut in {waitTimeNewInput.ToString().Trim('0')} Sekunden");
+                        Thread.Sleep(1000);
+                        waitTimeNewInput -= 1000;
+                    } while (waitTimeNewInput > 0);
+
+                    waitTimeNewInput = timeForSleep;
+                    Console.SetCursorPosition(positionLeft, positionTop);
+                    Console.Write(new string(' ', Console.WindowWidth - (30 - 1)));
+                    Console.SetCursorPosition(positionLeft, positionTop);
+                }
+                
+            } while (!ibanIsOk);
         }
+
+        
 
     }
 }
