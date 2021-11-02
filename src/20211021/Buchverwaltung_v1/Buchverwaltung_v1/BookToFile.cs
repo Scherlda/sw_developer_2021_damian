@@ -18,12 +18,13 @@ namespace Buchverwaltung_v1
         public static void EveryBookToOwnFile()
         {
             File.WriteAllText(PathBookLibary, $"{ BookInfos.BookTitel}\n");
-            File.AppendAllText(PathBookLibary, $"{ BookInfos.BookAuthor}\n");
+            File.AppendAllText(PathBookLibary, $"{ BookInfos.BookAutor}\n");
             File.AppendAllText(PathBookLibary, $"{ BookInfos.BookNumberPages.ToString()}\n");
             File.AppendAllText(PathBookLibary, $"{ BookInfos.BookYearOfPublication.ToString("yyyy")}\n");
             File.AppendAllText(PathBookLibary, $"{ BookInfos.BookPrice.ToString()}\n");
             File.AppendAllText(PathBookLibary, $"{ BookInfos.CustomerIBAN}\n");
         }
+        
     }
     
 

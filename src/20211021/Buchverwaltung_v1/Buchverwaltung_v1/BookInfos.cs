@@ -12,7 +12,7 @@ namespace Buchverwaltung_v1
     {
         //Attributes from Book
         public static string BookTitel;
-        public static string BookAuthor;
+        public static string BookAutor;
         public static int BookNumberPages; //How many Sites are in the Book
         public static DateTime BookYearOfPublication;
         public static double BookPrice;
@@ -28,7 +28,7 @@ namespace Buchverwaltung_v1
             
             Console.WriteLine("\n\nBitte geben Sie folgende Daten für die Buchanlage ein:\n");
             Console.WriteLine("\tTitel: ");
-            Console.WriteLine("\tAuthor: ");
+            Console.WriteLine("\tAutor: ");
             Console.WriteLine("\tAnzahl der Seiten: ");
             Console.WriteLine("\tErscheinungsjahr: ");
             Console.WriteLine("\tPreis (xx,yy): ");
@@ -36,7 +36,7 @@ namespace Buchverwaltung_v1
 
             //Fill all attribute variables
             SetBookTitel();
-            SetBookAuthor();
+            SetBookAutor();
             SetBookNumberPages();
             SetBookYearOfPublication();
             SetBookPrice();
@@ -48,10 +48,10 @@ namespace Buchverwaltung_v1
             BookTitel = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 7, 2000);
             
         }
-        public static void SetBookAuthor()
+        public static void SetBookAutor()
         {
             //Console.SetCursorPosition(30, 8);
-            BookAuthor = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 8, 2000);
+            BookAutor = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(30, 8, 2000);
         }
 
         public static void SetBookNumberPages()
