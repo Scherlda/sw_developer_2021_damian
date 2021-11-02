@@ -13,13 +13,22 @@ namespace Array_GL
             int geburtsJahr;
 
             //Deklaration
-            int[] listVonGeburtsjahren; //Das ist eine Lite von int, das ist ein Datentyp
+            int[] listeVonGeburtsjahren; //Das ist eine Lite von int, das ist ein Datentyp
 
             //Dimensionierung
-            listVonGeburtsjahren = new int[10];
+            listeVonGeburtsjahren = new int[10];
 
             //Initialisierung
-            listVonGeburtsjahren[0] = 5;
+            listeVonGeburtsjahren[0] = 5;
+            //Oder
+            for (int i = 0; i < listeVonGeburtsjahren.Length; i++)
+            {
+                listeVonGeburtsjahren[i] = 5;
+            }
+
+            listeVonGeburtsjahren = new int[21]; //durch new wird jetzt ein neuer Array erzeugt, die vorher gespeichterten Daten werden geleert.
+
+            Console.WriteLine(listeVonGeburtsjahren[2]);
         }
     }
 }
