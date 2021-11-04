@@ -10,6 +10,13 @@ namespace Klassen_GL
     {
         static void Main(string[] args)
         {
+            //Instanziierung
+            Mitarbeiter ma = new Mitarbeiter();
+
+            //Klasse / Object = Instanz
+            //Klasse ist ein Datentyp, im oberen Beispiel die Klasse Mitarbeiter
+            // ma ist ein Object/Instanz
+            
         }
     }
 }
