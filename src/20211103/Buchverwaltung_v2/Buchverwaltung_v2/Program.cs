@@ -142,7 +142,7 @@ namespace Buchverwaltung_v2
         static int CheckYearLenght()
         {
             int userInput = 2000;
-            int 
+            
             bool userInputIsOk = false;
             bool userInpoutCorrectFormat = false;
             do
@@ -157,11 +157,15 @@ namespace Buchverwaltung_v2
                     catch (Exception)
                     {
                         Console.WriteLine("Es wurde keine Zahl eingeben!");
-                        userInputIsOK = false;
+                        userInputIsOk = false;
                     }
                 }while (!userInputIsOk);
 
-
+                if (userInput > (DateTime.Now.Year + 2) && (userInput < DateTime.Now.Year - )
+                {
+                    Console.WriteLine("Die Eingbe ist ungültig! Bitte gib eine neue Zahl ein!");
+                    userInpoutCorrectFormat = false;
+                }
             }
             while (!userInpoutCorrectFormat);
 

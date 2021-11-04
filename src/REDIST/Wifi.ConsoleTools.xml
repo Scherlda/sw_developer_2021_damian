@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wifi.ConsoleTools</name>
+    </assembly>
+    <members>
+        <member name="M:Wifi.ConsoleTools.UIHelper.PrintColorMessage(System.String)">
+            <summary>
+            Print a colored message to default Output-Stream on the console.
+            </summary>
+            <param name="message">The message which should displayed</param>
+        </member>
+        <member name="M:Wifi.ConsoleTools.UIHelper.PrintColorMessage(System.String,System.ConsoleColor)">
+            <summary>
+            Print a colored message to default Output-Stream on the console.
+            </summary>
+            <param name="message">The message which should displayed</param>
+            <param name="messageColor">The color the provided message hould be displayed</param>
+        </member>
+    </members>
+</doc>

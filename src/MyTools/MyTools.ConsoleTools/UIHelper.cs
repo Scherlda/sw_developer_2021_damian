@@ -28,5 +28,7 @@ namespace MyTools.ConsoleTools
             Console.Write("╚" + new string('═', Console.WindowWidth - 2) + "╝");
 
         }
+
+        public static void ShowError
     }
 }
