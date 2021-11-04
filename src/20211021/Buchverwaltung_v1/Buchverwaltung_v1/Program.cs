@@ -72,7 +72,7 @@ namespace Buchverwaltung_v1
 
                     } while (userInputWasCorrect == false);
 
-                    //Wenn alle Eingaben gepasst haben, wird das Buchgespeichert
+                    //Wenn alle Eingaben gepasst haben, wird das Buch gespeichert
                     if (inputIsCorrect)
                     {
                         BookToFile.EveryBookToOwnFile();

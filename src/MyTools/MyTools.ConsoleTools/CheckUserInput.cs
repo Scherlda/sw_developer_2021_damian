@@ -185,7 +185,7 @@ namespace MyTools.ConsoleTools
 
                     waitTimeNewInput = timeForSleep;
                     Console.SetCursorPosition(positionLeft, positionTop);
-                    Console.Write(new string(' ', Console.WindowWidth - (30 - 1)));
+                    Console.Write(new string(' ', Console.WindowWidth - (positionLeft - 1)));
                     Console.SetCursorPosition(positionLeft, positionTop);
                 }
                 else
@@ -196,5 +196,10 @@ namespace MyTools.ConsoleTools
             } while (isUserInputCorrect == false);
             return DateYear;
         }
+
+
+
+       
+       
     }
 }
