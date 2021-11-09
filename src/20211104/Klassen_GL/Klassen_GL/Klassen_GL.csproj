@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Wifi.Tools.Solution\Wifi.ConsoleTools\Wifi.ConsoleTools.csproj">
+      <Project>{13446eee-3ebc-464d-a86a-6d438264fa69}</Project>
+      <Name>Wifi.ConsoleTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
