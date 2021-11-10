@@ -23,7 +23,7 @@ namespace MyTools.ConsoleTools
             int waitTimeNewInput = timeForSleep;
             Console.SetCursorPosition(positionLeft, positionTop);
 
-            //Liest das den in der Console Eingegebe Wert und versucht diesen in einen Int umzuwanlden
+            //Liest den in der Console Eingegebe Wert und versucht diesen in einen Int umzuwanlden
             while (!int.TryParse(Console.ReadLine(), out inputNumber))
             {
                 //Gibt eine Fehlermeldung mit einem Timer aus welche siche jede Sekunde aktualisiert
@@ -197,6 +197,21 @@ namespace MyTools.ConsoleTools
             return DateYear;
         }
 
+        public static void FalseInputTimerAndRepositionCourser(int positionLeft, int positionTop, int timeForSleep, string errorText)
+        {
+            int waitTimeNewInput = timeForSleep;
+            do
+            {
+                Console.SetCursorPosition(positionLeft, positionTop);
+                Console.Write($"{errorText} Versuche es erneut in {waitTimeNewInput.ToString().Trim('0')} Sekunden");
+                Thread.Sleep(1000);
+                waitTimeNewInput -= 1000;
+            } while (waitTimeNewInput > 0);
+            
+            Console.SetCursorPosition(positionLeft, positionTop);
+            Console.Write(new string(' ', Console.WindowWidth - (positionLeft - 1)));
+            Console.SetCursorPosition(positionLeft, positionTop);
+        }
 
 
        

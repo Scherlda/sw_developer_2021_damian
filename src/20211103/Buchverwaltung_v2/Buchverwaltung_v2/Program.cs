@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MyTools.ConsoleTools;
 
 namespace Buchverwaltung_v2
 {
@@ -31,11 +32,7 @@ namespace Buchverwaltung_v2
                             Console.Clear();
                             MyTools.ConsoleTools.UIHelper.PrintHeader("Buchverwaltung");
 
-                            Buch newBook = new Buch();
-                            Console.SetCursorPosition(10, 4);
-                            Console.WriteLine("Titel:");
-                            newBook.Titel = MyTools.ConsoleTools.CheckUserInput.String_CheckInputEmptyAndRepositionMouse(25,4,2000);
-                            newBook.Author = Console.ReadLine();
+                            ReadBookData();
 
 
                             break;
@@ -89,17 +86,7 @@ namespace Buchverwaltung_v2
                 else
                 {
                     int waitTimeNewInput = timeForSleep;
-                    do
-                    {
-                        Console.SetCursorPosition(positionLeft, positionTop);
-                        Console.Write($"Es wurde nicht 1 oder 2 eingegeben Versuche es erneut in {waitTimeNewInput.ToString().Trim('0')} Sekunden");
-                        Thread.Sleep(1000);
-                        waitTimeNewInput -= 1000;
-                    } while (waitTimeNewInput > 0);
-
-                    Console.SetCursorPosition(positionLeft, positionTop);
-                    Console.Write(new string(' ', Console.WindowWidth - (positionLeft - 1)));
-                    Console.SetCursorPosition(positionLeft, positionTop);
+                    CheckUserInput.FalseInputTimerAndRepositionCourser(positionLeft, positionTop, 2000, "Es wurde nicht 1, 2 oder 3 eingegeben");
                     userInputIsCorrect = false;
                 }
             }
@@ -129,7 +116,7 @@ namespace Buchverwaltung_v2
             newBook.Seitenanzahl = MyTools.ConsoleTools.CheckUserInput.Int_CheckInputAndRepositionMouse(25, 7, 2000);
             Console.SetCursorPosition(10, 8);
             Console.WriteLine("Erscheinungsjahr (yyyy):");
-            newBook.Erscheinungsjahr = ;
+            newBook.Erscheinungsjahr = CheckYearLenght(35, 8);
             Console.SetCursorPosition(10, 9);
             Console.WriteLine("Preis:");
             newBook.Preis = MyTools.ConsoleTools.CheckUserInput.Double_CheckInputAndRepositionMouse(25, 9, 2000);
@@ -139,36 +126,30 @@ namespace Buchverwaltung_v2
 
         }
 
-        static int CheckYearLenght()
+        static int CheckYearLenght(int mousePositionLeft, int mousePositionTop)
         {
             int userInput = 2000;
             
-            bool userInputIsOk = false;
+           // bool userInputIsOk = false;
             bool userInpoutCorrectFormat = false;
             do
             {
-                do
-                {
-                    try
-                    {
-                        userInput = int.Parse(Console.ReadLine());
-                        userInputIsOk = true;
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Es wurde keine Zahl eingeben!");
-                        userInputIsOk = false;
-                    }
-                }while (!userInputIsOk);
+                
+                userInput = CheckUserInput.Int_CheckInputAndRepositionMouse(mousePositionLeft, mousePositionTop, 2000);
+                 
 
-                if (userInput > (DateTime.Now.Year + 2) && (userInput < DateTime.Now.Year - )
+                if (userInput > ((Convert.ToInt32(DateTime.Now.Year) + 2)) && (userInput < ((Convert.ToInt32(DateTime.Now.Year) - 4000))))
                 {
-                    Console.WriteLine("Die Eingbe ist ungültig! Bitte gib eine neue Zahl ein!");
+                    CheckUserInput.FalseInputTimerAndRepositionCourser(mousePositionLeft, mousePositionTop, 2000, "Das Datum lag nicht im gültigen Bereich!");
                     userInpoutCorrectFormat = false;
+                }
+                else
+                {
+                    userInpoutCorrectFormat = true;
                 }
             }
             while (!userInpoutCorrectFormat);
-
+            return userInput;
         }
 
         

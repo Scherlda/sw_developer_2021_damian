@@ -29,6 +29,5 @@ namespace MyTools.ConsoleTools
 
         }
 
-        public static void ShowError
     }
 }

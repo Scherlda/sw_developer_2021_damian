@@ -25,7 +25,6 @@ namespace TeilnehmerVerwaltung_V1
             int count = 0;
             Teilnehmer[] listOfAttendees;
 
-
             //Eingabe der Anzahl von Teilnehmern
             Console.Write("Bitte Anzahl der Zeilnemer eingeben: ");
             count = int.Parse(Console.ReadLine());
@@ -44,9 +43,7 @@ namespace TeilnehmerVerwaltung_V1
                 listOfAttendees[i].GeburtsDatum = DateTime.Parse(Console.ReadLine());
                 Console.Write($"\tPostleitzahl Teilnehmer {i + 1}: ");
                 listOfAttendees[i].Plz = Wifi.ConsoleTools. //int.Parse(Console.ReadLine());
-
             }
-
             
             //Ausgabe der Daten
             foreach (Teilnehmer oneAttendee in listOfAttendees)
