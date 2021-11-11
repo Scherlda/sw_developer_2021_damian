@@ -26,6 +26,7 @@ namespace Autoverwaltung
             //aCar.SoundMachine.ChangePowerState(PowerState.On);
             //aCar.SoundMachine.MakeSound();
 
+            //Variable Datentypen
             var eineGanzeZahl = 0;
             var meinFahrzeug = new EScooter(VehicleType.Xiaomi, "blabla", 25, 120.5);
 
