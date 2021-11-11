@@ -8,20 +8,35 @@ namespace oop_uebung
 {
     class Fahrzeug
     {
-        private int _currentSpeed;
-        private int _maxSpeed;
         private string _manufacturer;
         private string _modelName;
-               
+        private int _currentSpeed;
+        private int _maxSpeed;
 
-        public int CurremtSpeed
+        public void SpeedUp(int delta)
         {
-            get { return _currentSpeed; }
+            _currentSpeed += delta;    
         }
 
-        public int MaxSpeed
+        public Fahrzeug()
         {
-            get { return _maxSpeed; }
+            Init();
+        }
+
+        public Fahrzeug(string manufacturer, string modelName, int currentSpeed, int maxSpeed)
+        {
+            _manufacturer = manufacturer;
+            _modelName = modelName;
+            _currentSpeed = currentSpeed;
+            _maxSpeed = maxSpeed;
+        }
+
+        private void Init()
+        {
+            _manufacturer = "Beispiel-Hersteller";
+            _modelName = "Pegasus";
+            _currentSpeed = 0;
+            _maxSpeed = 25;            
         }
 
         public string Manufacturer
@@ -34,5 +49,16 @@ namespace oop_uebung
             get { return _modelName; }
         }
 
+        public int CurremtSpeed
+        {
+            get { return _currentSpeed; }
+        }
+
+        public int MaxSpeed
+        {
+            get { return _maxSpeed; }
+        }
+
+        
     }
 }
