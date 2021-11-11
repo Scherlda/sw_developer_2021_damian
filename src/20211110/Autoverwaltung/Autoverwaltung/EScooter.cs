@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Autoverwaltung
 {
-    internal class EScooter : Auto
+    public  class EScooter : Fahrzeug
     {
         private double _batKapacity;
 
         public EScooter(VehicleType marke, string bezeichnung, int maxSpeed, double batteryCap)
-            : base(marke, bezeichnung, maxSpeed) //Muss mit dem Init in Auto() übereinstimmen
+            : base(marke, bezeichnung, maxSpeed) //Muss mit dem Init in Fahrzeug() übereinstimmen, befüllt den Fahrzeug Konstruktor welcher die drei Werte fasst.
         {
             _batKapacity = batteryCap;
         }

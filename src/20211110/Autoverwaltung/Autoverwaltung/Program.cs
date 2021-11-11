@@ -10,28 +10,27 @@ namespace Autoverwaltung
     {
         static void Main(string[] args)
         {
-            Auto[] myCars = new Auto[]
+            Fahrzeug[] myCars = new Fahrzeug[]
             {
-                new Auto(VehicleType.Audi, "A1", 200),
-                new Auto(VehicleType.BMW, "3er", 220),
-                new Auto(VehicleType.Tesla, "Model S", 250),
-                new Auto(VehicleType.Volkswagen, "Polo", 180)
+                new Auto(VehicleType.Audi, "A1", 200, FuelType.Benzin),
+                new Sportwagen(VehicleType.BMW, "3er", 220, FuelType.Diesel, 350),
+                new Fahrzeug(VehicleType.Tesla, "Model S", 250),
+                new EScooter(VehicleType.Xiaomi, "Speedy", 180, 150.0),
+                
             };
 
             DisplayCars(myCars);
 
-            //EScooter erbt von Auto, in dem Beispiel wie es hier verwendet wird, spricht man von einer IST - EIN beziehung
-            EScooter scooter = new EScooter(VehicleType.Xiaomi, "Speedy", 25, 360.0);
-
-            Console.WriteLine(scooter.GetInfoString());
-
+            Radio radio1 = new Radio("Sony");
+            radio1.ChangePowerState(PowerState.On);
+            radio1.MakeSound();
         }
 
-        private static void DisplayCars(Auto[] carsToDisplay)
+        private static void DisplayCars(Fahrzeug[] carsToDisplay)
         {
-            foreach (Auto car in carsToDisplay)
+            foreach (Fahrzeug car in carsToDisplay)
             {
-                Console.WriteLine(car.GetInfoString());
+                Console.WriteLine(car.DisplayInfos());
                 Console.WriteLine();
             }
         }
