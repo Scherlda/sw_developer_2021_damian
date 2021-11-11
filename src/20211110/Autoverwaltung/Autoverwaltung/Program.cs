@@ -19,11 +19,17 @@ namespace Autoverwaltung
                 
             };
 
-            DisplayCars(myCars);
+            //DisplayCars(myCars);
 
-            Radio radio1 = new Radio("Sony");
-            radio1.ChangePowerState(PowerState.On);
-            radio1.MakeSound();
+            //Fahrzeug aCar = myCars[0];
+
+            //aCar.SoundMachine.ChangePowerState(PowerState.On);
+            //aCar.SoundMachine.MakeSound();
+
+            var eineGanzeZahl = 0;
+            var meinFahrzeug = new EScooter(VehicleType.Xiaomi, "blabla", 25, 120.5);
+
+
         }
 
         private static void DisplayCars(Fahrzeug[] carsToDisplay)

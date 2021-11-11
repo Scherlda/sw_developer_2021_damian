@@ -13,12 +13,10 @@ namespace Autoverwaltung
         private int _maxSpeed;
         private VehicleType _marke;
         private string _bezeichnung;
-              
-        
-        public Fahrzeug()
-        {
-            
-        }
+        private Radio _soundMachine;      //Durch das Eingfügen von Radio kann in dieser Klasse, methoden erzeugt werden welche einfluss auf Radio nehmen jedoch kann von außen niemand etwas an radio ändern.
+                                          //Selbst wenn ich die Klasse Radio Komplet umbaua bleiben die Methoden über welche ein Kunde mittels Fahrzeug zugreift gleich. Dieses Prinzip nennt man Kapselung.
+
+
         public Fahrzeug(VehicleType marke, string bezeichnung, int maxSpeed)
         {
             Init(marke, bezeichnung, maxSpeed);
@@ -34,22 +32,14 @@ namespace Autoverwaltung
 
         private void Init(VehicleType marke, string bezeichnung, int maxSpeed)
         {
+            _soundMachine = new Radio(bezeichnung + "-Radio");
             _currentSpeed = 0;
             _bezeichnung = bezeichnung;
             _maxSpeed = maxSpeed;
             _marke = marke;
         }
 
-
-        //public Fahrzeug(string bezeichnung)
-        //{
-
-        //    _currentSpeed = 0;
-        //    _maxSpeed = 160;
-        //    _bezeichnung = bezeichnung;
-        //    _marke = VehicleType.Tesla;
-        //}
-
+        
         public int CurrentSpeed
         {
             get { return _currentSpeed; }
@@ -87,5 +77,16 @@ namespace Autoverwaltung
 
             return output;
         }
+
+        public void ChangeRadioState(PowerState newPowerState)
+        {
+            _soundMachine.ChangePowerState(newPowerState);
+        }
+
+        public void PlayMusik()
+        {
+            _soundMachine.MakeSound();
+        }
+
     }
 }
