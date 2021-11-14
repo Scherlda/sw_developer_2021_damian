@@ -30,7 +30,7 @@ namespace Autoverwaltung
             var eineGanzeZahl = 0;
             var meinFahrzeug = new EScooter(VehicleType.Xiaomi, "blabla", 25, 120.5);
 
-
+            
         }
 
         private static void DisplayCars(Fahrzeug[] carsToDisplay)
