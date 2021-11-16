@@ -19,7 +19,7 @@ namespace Autoverwaltung
                 
             };
 
-            //DisplayCars(myCars);
+            DisplayCars(myCars);
 
             //Fahrzeug aCar = myCars[0];
 
