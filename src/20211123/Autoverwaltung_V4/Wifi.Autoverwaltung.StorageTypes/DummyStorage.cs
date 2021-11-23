@@ -8,13 +8,13 @@ using Wifi.Autoverwaltung.VehicleTypes;
 
 namespace Wifi.Autoverwaltung.StorageTypes
 {
-    public class DummyStorage : StorageBase
+    public class DummyStorage : IStorageBase
     {
-        public override string Filename
+        public string Filename
         {
             get { return "dummy.car"; }
         }
-        public override Fahrzeug[] Read()
+        public Fahrzeug[] Read()
         {
             var myVehiclelist = new Fahrzeug[]
             {
@@ -25,7 +25,7 @@ namespace Wifi.Autoverwaltung.StorageTypes
             return myVehiclelist;
         }
 
-        public override bool Write(Fahrzeug[] vehiclesToStore)
+        public bool Write(Fahrzeug[] vehiclesToStore)
         {
             throw new NotImplementedException();
         }

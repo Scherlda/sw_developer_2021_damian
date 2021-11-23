@@ -21,7 +21,8 @@ namespace Wifi.Autoverwaltung.UI
 
             //storage objekt erzeugen
             //hier könnte genau so gut var storage = new DummyStorage() stehen, wichtig ist das hinten, diues drückt aus was initialisiert wird
-            StorageBase storage = new DummyStorage();
+            IStorageBase storage = new DummyStorage();
+
             var myVehicleList = storage.Read();
             if (myVehicleList.Length > 0)
             {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wifi.Autoverwaltung.Core
 {
-    public abstract class Fahrzeug
+    public abstract class Fahrzeug : IVehicleType
     {
         private int _currentSpeed;
         private int _maxSpeed;
