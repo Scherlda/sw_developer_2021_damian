@@ -18,5 +18,8 @@ namespace BookManager
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new BookManager());
         }
+
+
+
     }
 }
