@@ -38,5 +38,10 @@ namespace FormsGL
             _myBooks.Add(newBook);
             ClearFormContent(null, null);
         }
+
+        private void txt_Titel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

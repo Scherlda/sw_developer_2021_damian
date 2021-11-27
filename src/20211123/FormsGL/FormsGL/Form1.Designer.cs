@@ -83,6 +83,7 @@
             this.txt_Titel.Size = new System.Drawing.Size(268, 20);
             this.txt_Titel.TabIndex = 3;
             this.txt_Titel.Text = "Hier!";
+            this.txt_Titel.TextChanged += new System.EventHandler(this.txt_Titel_TextChanged);
             // 
             // label2
             // 
