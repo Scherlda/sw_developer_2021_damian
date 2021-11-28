@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookManager));
-            this.list_BookOverview = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_LoadBook = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
             this.btn_ClearAll = new System.Windows.Forms.Button();
             this.txt_YearOfPublication = new System.Windows.Forms.TextBox();
+            this.btn_AddBook = new System.Windows.Forms.Button();
             this.lbl_YearOfPublication = new System.Windows.Forms.Label();
             this.txt_Language = new System.Windows.Forms.TextBox();
             this.lbl_Language = new System.Windows.Forms.Label();
@@ -48,27 +47,21 @@
             this.lbl_Publisher = new System.Windows.Forms.Label();
             this.lbl_Autor = new System.Windows.Forms.Label();
             this.lbl_Title = new System.Windows.Forms.Label();
+            this.btn_SaveFile = new System.Windows.Forms.Button();
+            this.dGV_BookOverview = new System.Windows.Forms.DataGridView();
+            this.btn_LoadFile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BookCover)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_BookOverview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // list_BookOverview
-            // 
-            this.list_BookOverview.HideSelection = false;
-            this.list_BookOverview.Location = new System.Drawing.Point(719, 82);
-            this.list_BookOverview.Name = "list_BookOverview";
-            this.list_BookOverview.Size = new System.Drawing.Size(516, 529);
-            this.list_BookOverview.TabIndex = 0;
-            this.list_BookOverview.UseCompatibleStateImageBehavior = false;
-            this.list_BookOverview.SelectedIndexChanged += new System.EventHandler(this.list_BookOverview_SelectedIndexChanged);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_Exit);
+            this.panel1.Controls.Add(this.btn_LoadBook);
             this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Save);
             this.panel1.Controls.Add(this.btn_ClearAll);
             this.panel1.Controls.Add(this.txt_YearOfPublication);
+            this.panel1.Controls.Add(this.btn_AddBook);
             this.panel1.Controls.Add(this.lbl_YearOfPublication);
             this.panel1.Controls.Add(this.txt_Language);
             this.panel1.Controls.Add(this.lbl_Language);
@@ -86,14 +79,14 @@
             this.panel1.Size = new System.Drawing.Size(681, 529);
             this.panel1.TabIndex = 1;
             // 
-            // btn_Exit
+            // btn_LoadBook
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(564, 486);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(114, 40);
-            this.btn_Exit.TabIndex = 15;
-            this.btn_Exit.Text = "Exit";
-            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_LoadBook.Location = new System.Drawing.Point(554, 486);
+            this.btn_LoadBook.Name = "btn_LoadBook";
+            this.btn_LoadBook.Size = new System.Drawing.Size(114, 40);
+            this.btn_LoadBook.TabIndex = 16;
+            this.btn_LoadBook.Text = "Load Book";
+            this.btn_LoadBook.UseVisualStyleBackColor = true;
             // 
             // btn_Delete
             // 
@@ -103,16 +96,6 @@
             this.btn_Delete.TabIndex = 14;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(186, 486);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(114, 40);
-            this.btn_Save.TabIndex = 13;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_ClearAll
             // 
@@ -130,6 +113,16 @@
             this.txt_YearOfPublication.Name = "txt_YearOfPublication";
             this.txt_YearOfPublication.Size = new System.Drawing.Size(321, 20);
             this.txt_YearOfPublication.TabIndex = 11;
+            // 
+            // btn_AddBook
+            // 
+            this.btn_AddBook.Location = new System.Drawing.Point(185, 486);
+            this.btn_AddBook.Name = "btn_AddBook";
+            this.btn_AddBook.Size = new System.Drawing.Size(114, 40);
+            this.btn_AddBook.TabIndex = 13;
+            this.btn_AddBook.Text = "Add Book";
+            this.btn_AddBook.UseVisualStyleBackColor = true;
+            this.btn_AddBook.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // lbl_YearOfPublication
             // 
@@ -229,12 +222,41 @@
             this.lbl_Title.Text = "Title";
             this.lbl_Title.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btn_SaveFile
+            // 
+            this.btn_SaveFile.Location = new System.Drawing.Point(1106, 23);
+            this.btn_SaveFile.Name = "btn_SaveFile";
+            this.btn_SaveFile.Size = new System.Drawing.Size(114, 40);
+            this.btn_SaveFile.TabIndex = 15;
+            this.btn_SaveFile.Text = "Save to File";
+            this.btn_SaveFile.UseVisualStyleBackColor = true;
+            // 
+            // dGV_BookOverview
+            // 
+            this.dGV_BookOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_BookOverview.Location = new System.Drawing.Point(722, 82);
+            this.dGV_BookOverview.Name = "dGV_BookOverview";
+            this.dGV_BookOverview.ReadOnly = true;
+            this.dGV_BookOverview.Size = new System.Drawing.Size(513, 529);
+            this.dGV_BookOverview.TabIndex = 2;
+            // 
+            // btn_LoadFile
+            // 
+            this.btn_LoadFile.Location = new System.Drawing.Point(956, 23);
+            this.btn_LoadFile.Name = "btn_LoadFile";
+            this.btn_LoadFile.Size = new System.Drawing.Size(114, 40);
+            this.btn_LoadFile.TabIndex = 14;
+            this.btn_LoadFile.Text = "Load File";
+            this.btn_LoadFile.UseVisualStyleBackColor = true;
+            // 
             // BookManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 623);
-            this.Controls.Add(this.list_BookOverview);
+            this.Controls.Add(this.btn_LoadFile);
+            this.Controls.Add(this.btn_SaveFile);
+            this.Controls.Add(this.dGV_BookOverview);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookManager";
@@ -243,13 +265,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BookCover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_BookOverview)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView list_BookOverview;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_AgeRecommendation;
         private System.Windows.Forms.TextBox txt_Publisher;
@@ -264,10 +285,13 @@
         private System.Windows.Forms.Label lbl_YearOfPublication;
         private System.Windows.Forms.TextBox txt_Language;
         private System.Windows.Forms.Label lbl_Language;
-        private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.Button btn_SaveFile;
         private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_AddBook;
         private System.Windows.Forms.Button btn_ClearAll;
+        private System.Windows.Forms.DataGridView dGV_BookOverview;
+        private System.Windows.Forms.Button btn_LoadBook;
+        private System.Windows.Forms.Button btn_LoadFile;
     }
 }
 
