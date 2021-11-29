@@ -11,7 +11,7 @@ namespace BookManager
         string Title { get; set; }
         string Autor { get; set; }
         string Publisher { get; set; }
-        string AgeRating { get; set; }
+        int AgeRating { get; set; }
         string Languages { get; set; }
         string YearOfPublication { get; set; }
 

@@ -13,16 +13,17 @@ namespace BookManager
     public partial class BookManager : Form
     {
         //DataTable BookDB = new DataTable();
-
+        private List<Book> _myBookList;
         public BookManager()
         {
             InitializeComponent();
-            dGV_BookOverview.Columns.Add("Title", "Title");
-            dGV_BookOverview.Columns.Add("Autor", "Autor");
-            dGV_BookOverview.Columns.Add("Publisher", "Publisher");
-            dGV_BookOverview.Columns.Add("Age Recommendation", "Age Recommendation");
-            dGV_BookOverview.Columns.Add("Language", "Language");
-            dGV_BookOverview.Columns.Add("Year Of Publication", "Year Of Publication");
+            _myBookList = new List<Book>();
+            //dGV_BookOverview.Columns.Add("Title", "Title");
+            //dGV_BookOverview.Columns.Add("Autor", "Autor");
+            //dGV_BookOverview.Columns.Add("Publisher", "Publisher");
+            //dGV_BookOverview.Columns.Add("Age Recommendation", "Age Recommendation");
+            //dGV_BookOverview.Columns.Add("Language", "Language");
+            //dGV_BookOverview.Columns.Add("Year Of Publication", "Year Of Publication");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,12 +46,12 @@ namespace BookManager
             txt_YearOfPublication.Text = string.Empty;
         }
 
-        private List<Book> _myBookList;
+        
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
             //List<IBook> blabla = new List<IBook>();
-            var newBook = new Book(txt_Title.Text, txt_Autor.Text, txt_Publisher.Text, txt_AgeRecommendation.Text, txt_Language.Text, txt_YearOfPublication.Text);
+            var newBook = new Book(txt_Title.Text, txt_Autor.Text, txt_Publisher.Text, Convert.ToInt32(txt_AgeRecommendation.Text), txt_Language.Text, txt_YearOfPublication.Text);
             _myBookList.Add(newBook);
             dGV_BookOverview.DataSource = null;
             dGV_BookOverview.DataSource = _myBookList;
