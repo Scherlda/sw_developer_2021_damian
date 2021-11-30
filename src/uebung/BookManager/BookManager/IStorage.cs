@@ -8,8 +8,8 @@ namespace BookManager
 {
     public interface IStorage
     {
-        List<IBook> Load(string filename);
+        IEnumerable<IBook> Load(string filename);
 
-        bool Save(List<IBook> dataToSave, string filename);
+        bool Save(IEnumerable<IBook> dataToSave, string filename);
     }
 }

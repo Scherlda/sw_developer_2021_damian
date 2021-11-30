@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookManager.StorageTypes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BookManager
 {
     public partial class BookManager : Form
     {
-        //DataTable BookDB = new DataTable();
         private List<IBook> _myBookList;
+        private IStorage _storage;
         public BookManager()
         {
             InitializeComponent();
             _myBookList = new List<IBook>();
+            //_storage = new JsonStorage();
+            _storage = new XmlStorage();
+
+
             //dGV_BookOverview.Columns.Add("Title", "Title");
             //dGV_BookOverview.Columns.Add("Autor", "Autor");
             //dGV_BookOverview.Columns.Add("Publisher", "Publisher");
@@ -44,6 +50,7 @@ namespace BookManager
             txt_AgeRecommendation.Text = string.Empty;
             txt_Language.Text = string.Empty;
             txt_YearOfPublication.Text = string.Empty;
+            txt_Title.Focus();
         }
 
         
@@ -52,10 +59,20 @@ namespace BookManager
         {
             var newBook = new Book(txt_Title.Text, txt_Autor.Text, txt_Publisher.Text, Convert.ToInt32(txt_AgeRecommendation.Text), txt_Language.Text, Convert.ToInt32(txt_YearOfPublication.Text));
             _myBookList.Add(newBook);
-            dGV_BookOverview.DataSource = null;
-            dGV_BookOverview.DataSource = _myBookList;
-
+    
+            DisplayBookList(_myBookList);
             btn_ClearAll_Click(null, null);
+        }
+
+        private void DisplayBookList(IEnumerable<IBook> booksToDisplay)
+        {
+            dGV_BookOverview.DataSource = null;
+            dGV_BookOverview.DataSource = booksToDisplay;
+            //foreach (var book in booksToDisplay)
+            //{
+            //    txt_bookListView.Text += book.Title + Environment.NewLine;
+            //    txt_bookListView.Show();
+            //}
         }
 
         private void list_BookOverview_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,6 +84,43 @@ namespace BookManager
         {
 
         }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); //Sauberer Weg ein program zu beenden
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_myBookList == null || _myBookList.Count == 0)
+            {
+                return;
+            }
+
+            var erg = _storage.Save(_myBookList, "MyBookList.dat");
+            if (erg)
+            {
+                MessageBox.Show("Bücherliste wurde  erfolgreich gespeichert",
+                    "Speichern", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _myBookList.Clear();
+
+            _myBookList.AddRange(_storage.Load("MyBookList.dat")); //Load liefert eine Liste
+
+            DisplayBookList(_myBookList);
+        }
+
+
+        private void txt_bookListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
 

@@ -47,12 +47,19 @@
             this.lbl_Publisher = new System.Windows.Forms.Label();
             this.lbl_Autor = new System.Windows.Forms.Label();
             this.lbl_Title = new System.Windows.Forms.Label();
-            this.btn_SaveFile = new System.Windows.Forms.Button();
             this.dGV_BookOverview = new System.Windows.Forms.DataGridView();
-            this.btn_LoadFile = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_bookListView = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BookCover)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_BookOverview)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -222,18 +229,11 @@
             this.lbl_Title.Text = "Title";
             this.lbl_Title.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btn_SaveFile
-            // 
-            this.btn_SaveFile.Location = new System.Drawing.Point(1106, 23);
-            this.btn_SaveFile.Name = "btn_SaveFile";
-            this.btn_SaveFile.Size = new System.Drawing.Size(114, 40);
-            this.btn_SaveFile.TabIndex = 15;
-            this.btn_SaveFile.Text = "Save to File";
-            this.btn_SaveFile.UseVisualStyleBackColor = true;
-            this.btn_SaveFile.Click += new System.EventHandler(this.btn_SaveFile_Click);
-            // 
             // dGV_BookOverview
             // 
+            this.dGV_BookOverview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dGV_BookOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_BookOverview.Location = new System.Drawing.Point(722, 82);
             this.dGV_BookOverview.Name = "dGV_BookOverview";
@@ -241,25 +241,87 @@
             this.dGV_BookOverview.Size = new System.Drawing.Size(513, 529);
             this.dGV_BookOverview.TabIndex = 2;
             // 
-            // btn_LoadFile
+            // label1
             // 
-            this.btn_LoadFile.Location = new System.Drawing.Point(956, 23);
-            this.btn_LoadFile.Name = "btn_LoadFile";
-            this.btn_LoadFile.Size = new System.Drawing.Size(114, 40);
-            this.btn_LoadFile.TabIndex = 14;
-            this.btn_LoadFile.Text = "Load File";
-            this.btn_LoadFile.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1118, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 12);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Copyright 2021 Damian Scherl";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1247, 24);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.quitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
+            // txt_bookListView
+            // 
+            this.txt_bookListView.HideSelection = false;
+            this.txt_bookListView.Location = new System.Drawing.Point(688, 44);
+            this.txt_bookListView.Name = "txt_bookListView";
+            this.txt_bookListView.Size = new System.Drawing.Size(204, 255);
+            this.txt_bookListView.TabIndex = 20;
+            this.txt_bookListView.UseCompatibleStateImageBehavior = false;
+            this.txt_bookListView.SelectedIndexChanged += new System.EventHandler(this.txt_bookListView_SelectedIndexChanged);
             // 
             // BookManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 623);
-            this.Controls.Add(this.btn_LoadFile);
-            this.Controls.Add(this.btn_SaveFile);
+            this.Controls.Add(this.txt_bookListView);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dGV_BookOverview);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1500, 662);
+            this.MinimumSize = new System.Drawing.Size(1263, 662);
             this.Name = "BookManager";
             this.Text = "Book Manager";
             this.Load += new System.EventHandler(this.BookManager_Load);
@@ -267,7 +329,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BookCover)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_BookOverview)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -286,13 +351,19 @@
         private System.Windows.Forms.Label lbl_YearOfPublication;
         private System.Windows.Forms.TextBox txt_Language;
         private System.Windows.Forms.Label lbl_Language;
-        private System.Windows.Forms.Button btn_SaveFile;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_AddBook;
         private System.Windows.Forms.Button btn_ClearAll;
         private System.Windows.Forms.DataGridView dGV_BookOverview;
         private System.Windows.Forms.Button btn_LoadBook;
-        private System.Windows.Forms.Button btn_LoadFile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.ListView txt_bookListView;
     }
 }
 
