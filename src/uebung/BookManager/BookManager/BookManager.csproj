@@ -55,6 +55,8 @@
       <DependentUpon>BookManager.cs</DependentUpon>
     </Compile>
     <Compile Include="IBook.cs" />
+    <Compile Include="IStorage.cs" />
+    <Compile Include="JsonStorage.cs" />
     <Compile Include="Languages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

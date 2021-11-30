@@ -13,11 +13,11 @@ namespace BookManager
     public partial class BookManager : Form
     {
         //DataTable BookDB = new DataTable();
-        private List<Book> _myBookList;
+        private List<IBook> _myBookList;
         public BookManager()
         {
             InitializeComponent();
-            _myBookList = new List<Book>();
+            _myBookList = new List<IBook>();
             //dGV_BookOverview.Columns.Add("Title", "Title");
             //dGV_BookOverview.Columns.Add("Autor", "Autor");
             //dGV_BookOverview.Columns.Add("Publisher", "Publisher");
@@ -67,6 +67,11 @@ namespace BookManager
         private void list_BookOverview_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_SaveFile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -230,6 +230,7 @@
             this.btn_SaveFile.TabIndex = 15;
             this.btn_SaveFile.Text = "Save to File";
             this.btn_SaveFile.UseVisualStyleBackColor = true;
+            this.btn_SaveFile.Click += new System.EventHandler(this.btn_SaveFile_Click);
             // 
             // dGV_BookOverview
             // 
