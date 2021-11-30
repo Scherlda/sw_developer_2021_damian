@@ -50,16 +50,10 @@ namespace BookManager
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            //List<IBook> blabla = new List<IBook>();
-            var newBook = new Book(txt_Title.Text, txt_Autor.Text, txt_Publisher.Text, Convert.ToInt32(txt_AgeRecommendation.Text), txt_Language.Text, txt_YearOfPublication.Text);
+            var newBook = new Book(txt_Title.Text, txt_Autor.Text, txt_Publisher.Text, Convert.ToInt32(txt_AgeRecommendation.Text), txt_Language.Text, Convert.ToInt32(txt_YearOfPublication.Text));
             _myBookList.Add(newBook);
             dGV_BookOverview.DataSource = null;
             dGV_BookOverview.DataSource = _myBookList;
-            //var newBook = new Book(txt_Title.Text, txt_Autor.Text, txt_Publisher.Text, txt_AgeRecommendation.Text, txt_Language.Text, txt_YearOfPublication.Text);
-
-            //BookDB.Rows.Add(new object[]{ newBook });
-
-            //dGV_BookOverview.DataSource = BookDB;
 
             btn_ClearAll_Click(null, null);
         }

@@ -14,13 +14,13 @@ namespace BookManager
         private string _publisher;
         private int _ageRating;
         private string _languages;
-        private string _yearOfPublicaion;
+        private int _yearOfPublicaion;
 
         public Book()
         {
         }
 
-        public Book(string title, string autor, string publisher, int ageRating, string languages, string yearOfPublication)
+        public Book(string title, string autor, string publisher, int ageRating, string languages, int yearOfPublication)
         {
             _title = title;
             _autor = autor;
@@ -55,7 +55,7 @@ namespace BookManager
             get { return _languages; }
             set { _languages = value; }
         }
-        public string YearOfPublication
+        public int YearOfPublication
         {
             get { return _yearOfPublicaion; }
             set { _yearOfPublicaion = value; }

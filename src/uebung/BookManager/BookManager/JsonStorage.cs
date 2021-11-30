@@ -16,9 +16,14 @@ namespace BookManager
 
         public bool Save(List<IBook> dataToSave, string filename)
         { //if nicht vergessen
-            var _bookToSave = dataToSave;
+            //var _bookToSave = dataToSave;
              
-            FileStream fileStream = new FileStream(filename, FileMode.Create);
+            //using (StreamWriter file = File.CreateText(filename))
+            //{
+            //    JsonStorage serial = new JsonStorage();
+                
+            //}
+            
             
             return true;
         }
