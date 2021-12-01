@@ -13,7 +13,12 @@ namespace BookManager.StorageTypes
     {
         public IEnumerable<IBook> Load(string filename)
         {
-            throw new NotImplementedException();
+            //IEnumerable<
+            //XmlSerializer serializer = new XmlSerializer(typeof(Item));
+
+            //StreamReader reader = new StreamReader(filename);
+            // serializer.Deserialize(reader);
+            
         }
 
         public bool Save(IEnumerable<IBook> dataToSave, string filename)
