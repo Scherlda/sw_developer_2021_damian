@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wifi.PlaylistEditor.UI", "Wifi.PlaylistEditor.UI\Wifi.PlaylistEditor.UI.csproj", "{189B9079-4D64-4664-A80E-F2118D1148FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wifi.PlaylistEditor.Types", "Wifi.PlaylistEditor.Types\Wifi.PlaylistEditor.Types.csproj", "{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wifi.PlaylistEditor.Types.Test", "Wifi.PlaylistEditor.Types.Test\Wifi.PlaylistEditor.Types.Test.csproj", "{CAC252D6-9006-4EE6-B1CF-27F127F24657}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{189B9079-4D64-4664-A80E-F2118D1148FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{189B9079-4D64-4664-A80E-F2118D1148FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{189B9079-4D64-4664-A80E-F2118D1148FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{189B9079-4D64-4664-A80E-F2118D1148FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC252D6-9006-4EE6-B1CF-27F127F24657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC252D6-9006-4EE6-B1CF-27F127F24657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC252D6-9006-4EE6-B1CF-27F127F24657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC252D6-9006-4EE6-B1CF-27F127F24657}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A868D62-CC1E-4B90-B6D1-3B7EAB132961}
+	EndGlobalSection
+EndGlobal
