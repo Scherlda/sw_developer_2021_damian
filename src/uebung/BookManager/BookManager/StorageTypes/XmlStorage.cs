@@ -13,18 +13,43 @@ namespace BookManager.StorageTypes
     {
         public IEnumerable<IBook> Load(string filename)
         {
+            
+            
+            List<ItemListRoot> importBooks;
+            using (var stream = new StreamReader(filename))
+            {
+                XmlSerializer deserializer = new XmlSerializer(typeof(IEnumerable<Item>),
+                new XmlRootAttribute(filename));
+                importBooks = (List<ItemListRoot>)deserializer.Deserialize(stream);
+                
+            }
+
+            return (IEnumerable<IBook>)importBooks;
+            
+            //ALT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //item.Autor = book.Autor;
+            //item.Publisher = book.Publisher;
+            //item.AgeRecommendation = book.AgeRating;
+            //item.Language = book.Languages;
+            //item.YearOfPublication = book.YearOfPublication;
+
+            //var items = new List<Item>();
+            //var xmlRoot = new ItemListRoot();
+
+
             //IEnumerable<
             //XmlSerializer serializer = new XmlSerializer(typeof(Item));
 
             //StreamReader reader = new StreamReader(filename);
             // serializer.Deserialize(reader);
-            
+
         }
 
         public bool Save(IEnumerable<IBook> dataToSave, string filename)
         {
             var items = new List<Item>();
             var xmlRoot = new ItemListRoot();
+
             foreach (var book in dataToSave)
             {
                 var item = new Item();
