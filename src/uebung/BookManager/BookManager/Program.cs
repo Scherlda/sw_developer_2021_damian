@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookManager.StorageTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,10 @@ namespace BookManager
         [STAThread]
         static void Main()
         {
+            var storage = new XmlStorage();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookManager());
+            Application.Run(new BookManager(storage)); //nachdem in BookMaanger auf IStorage umgestellt wurde muss hier (storage) mitgegeben werden.
         }
 
 

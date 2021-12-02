@@ -16,20 +16,16 @@ namespace BookManager
     {
         private List<IBook> _myBookList;
         private IStorage _storage;
-        public BookManager()
+        public BookManager(IStorage storage)
         {
             InitializeComponent();
+            _storage = storage;
             _myBookList = new List<IBook>();
-            //_storage = new JsonStorage();
-            _storage = new XmlStorage();
+            //
+            //_myBookList = new List<IBook>();
+            ////_storage = new JsonStorage();
+            //_storage = new XmlStorage();
 
-
-            //dGV_BookOverview.Columns.Add("Title", "Title");
-            //dGV_BookOverview.Columns.Add("Autor", "Autor");
-            //dGV_BookOverview.Columns.Add("Publisher", "Publisher");
-            //dGV_BookOverview.Columns.Add("Age Recommendation", "Age Recommendation");
-            //dGV_BookOverview.Columns.Add("Language", "Language");
-            //dGV_BookOverview.Columns.Add("Year Of Publication", "Year Of Publication");
         }
 
         private void label1_Click(object sender, EventArgs e)
