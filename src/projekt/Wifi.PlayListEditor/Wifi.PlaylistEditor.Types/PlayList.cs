@@ -16,7 +16,6 @@ namespace Wifi.PlaylistEditor.Types
         public PlayList(string name, string autor)
             : this(name, autor, DateTime.Now)
         {
-
         }
 
         public PlayList(string name, string autor, DateTime createDate)
@@ -24,6 +23,8 @@ namespace Wifi.PlaylistEditor.Types
             _name = name;
             _autor = autor;
             _createDate = createDate;
+
+            _items = new List<IPlayListItem>();
         }
 
         public string Name
@@ -32,59 +33,45 @@ namespace Wifi.PlaylistEditor.Types
         }
         public string Autor
         {
-            get { return _autor; }
+            get { return _autor;}
         }
         public DateTime CreateDate
         {
             get { return _createDate; }
         }
+
         public TimeSpan Duration
         {
             get
             {
-                var dureation = TimeSpan.Zero;
+                var duration = TimeSpan.Zero;
                 foreach (var item in _items)
                 {
-                    dureation.Add(item.Duration);
+                    duration.Add(item.Duration);
                 }
-                return dureation;
+
+                return duration;
             }
         }
 
-        public IEnumerable<IPlaylist> Items => throw new NotImplementedException();
-
-        public void Add(IPlaylist newItem)
+        public IEnumerable<IPlayListItem> Items
         {
-            throw new NotImplementedException();
+            get { return _items; }
+        }
+
+        public void Add(IPlayListItem newItem)
+        {
+            _items.Add(newItem);
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            _items.Clear();
         }
 
-        public void Remove(IPlaylist itemToRemove)
+        public void Remove(IPlayListItem itemToRemove)
         {
-            throw new NotImplementedException();
+            _items.Remove(itemToRemove);
         }
-        //public IEnumerable<IPlayListItem> Items
-        //{
-        //    get { return _items; }
-        //}
-
-        //public void Add(IPlayListItem newItem)
-        //{
-        //    _items.Add(newItem);
-        //}
-
-        //public void Clear()
-        //{
-        //    _items.Clear();
-        //}
-
-        //public void Remove(IPlayListItem itemToRemove)
-        //{
-        //    _items.Remove(itemToRemove);
-        //}
     }
 }

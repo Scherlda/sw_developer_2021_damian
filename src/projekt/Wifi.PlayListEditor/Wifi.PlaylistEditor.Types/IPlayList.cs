@@ -15,9 +15,9 @@ namespace Wifi.PlaylistEditor.Types
         string Autor { get; }
         DateTime CreateDate { get; }
         TimeSpan Duration { get; }
-        IEnumerable<Ipl> Items { get; }
-        void Add(IPlaylist newItem);
-        void Remove(IPlaylist itemToRemove);
+        IEnumerable<IPlayListItem> Items { get; }
+        void Add(IPlayListItem newItem);
+        void Remove(IPlayListItem itemToRemove);
         void Clear();
     }
     
