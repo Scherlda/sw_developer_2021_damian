@@ -43,8 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPlayList.cs" />
-    <Compile Include="IPlayListItem.cs" />
-    <Compile Include="PlayList.cs" />
+    <Compile Include="IPlaylistItem.cs" />
+    <Compile Include="Playlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

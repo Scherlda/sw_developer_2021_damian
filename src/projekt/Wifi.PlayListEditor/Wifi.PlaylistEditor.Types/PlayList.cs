@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace Wifi.PlaylistEditor.Types
 {
-    public class PlayList : IPlaylist
+    public class Playlist : IPlaylist
     {
         private string _name;
         private string _autor;        
         private DateTime _createDate;
-        private List<IPlayListItem> _items;
+        private List<IPlaylistItem> _items;
 
-        public PlayList(string name, string autor)
+        public Playlist(string name, string autor)
             : this(name, autor, DateTime.Now)
         {
         }
 
-        public PlayList(string name, string autor, DateTime createDate)
+        public Playlist(string name, string autor, DateTime createDate)
         {
             _name = name;
             _autor = autor;
             _createDate = createDate;
 
-            _items = new List<IPlayListItem>();
+            _items = new List<IPlaylistItem>();
         }
 
         public string Name
@@ -54,12 +54,12 @@ namespace Wifi.PlaylistEditor.Types
             }
         }
 
-        public IEnumerable<IPlayListItem> Items
+        public IEnumerable<IPlaylistItem> Items
         {
             get { return _items; }
         }
 
-        public void Add(IPlayListItem newItem)
+        public void Add(IPlaylistItem newItem)
         {
             _items.Add(newItem);
         }
@@ -69,7 +69,7 @@ namespace Wifi.PlaylistEditor.Types
             _items.Clear();
         }
 
-        public void Remove(IPlayListItem itemToRemove)
+        public void Remove(IPlaylistItem itemToRemove)
         {
             _items.Remove(itemToRemove);
         }

@@ -12,9 +12,15 @@ namespace Wifi.PlaylistEditor.UI
 {
     public partial class Form1 : Form
     {
+        //Fields
+        private int borderSize = 2;
+
+        //Constructor
         public Form1()
         {
             InitializeComponent();
+            this.Padding = new System.Windows.Forms.Padding(borderSize);
+            //this.BackColor = Color.FromArgb(220, 193, 176);
         }
     }
 }

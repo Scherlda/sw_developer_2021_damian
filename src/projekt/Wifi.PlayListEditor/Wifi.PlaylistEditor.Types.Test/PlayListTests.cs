@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace Wifi.PlaylistEditor.Types.Test
 {
     [TestFixture]
-    public class PlayListTests
+    public class PlaylistTests
     {
-        private PlayList _fixture;
+        private Playlist _fixture;
         [Test]
         public void DummyTest()
         {
@@ -23,5 +23,6 @@ namespace Wifi.PlaylistEditor.Types.Test
             //Assert
             Assert.That(result, Is.EqualTo(20));
         }
+
     }
 }
