@@ -24,5 +24,31 @@ namespace Wifi.PlaylistEditor.Types.Test
             Assert.That(result, Is.EqualTo(20));
         }
 
+        [Test]
+        public void Name_get()
+        {
+            //Arrange
+            _fixture = new Playlist("NoName", "Gandalf");
+
+            //Act
+            var result = _fixture.Name;
+
+            //Assert
+            Assert.That(result, Is.EqualTo("NoName"));
+        }
+
+        [Test]
+        public void Author_get()
+        {
+            //Arrange
+            _fixture = new Playlist("NoName", "Gandalf");
+
+            //Act
+            var result = _fixture.Autor;
+
+            //Assert
+            Assert.That(result, Is.EqualTo("Gandalf"));
+        }
+
     }
 }
