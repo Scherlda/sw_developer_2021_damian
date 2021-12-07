@@ -47,7 +47,7 @@ namespace Wifi.PlaylistEditor.Types
                 var duration = TimeSpan.Zero;
                 foreach (var item in _items)
                 {
-                    duration.Add(item.Duration);
+                    duration = duration.Add(item.Duration);
                 }
 
                 return duration;
@@ -61,6 +61,9 @@ namespace Wifi.PlaylistEditor.Types
 
         public void Add(IPlaylistItem newItem)
         {
+            if (newItem == null)
+            { return; }
+
             _items.Add(newItem);
         }
 

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}</ProjectGuid>
+    <ProjectGuid>{6B4A243E-FEF2-499E-845E-1322178B4EFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wifi.PlaylistEditor.Types</RootNamespace>
-    <AssemblyName>Wifi.PlaylistEditor.Types</AssemblyName>
+    <RootNamespace>Wifi.PlaylistEditor.Repositories</RootNamespace>
+    <AssemblyName>Wifi.PlaylistEditor.Repositories</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IFileIdentifier.cs" />
-    <Compile Include="IPlayList.cs" />
-    <Compile Include="IPlaylistItem.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="Playlist.cs" />
+    <Compile Include="M3uRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wifi.PlaylistEditor.Types\Wifi.PlaylistEditor.Types.csproj">
+      <Project>{f5de1ded-bfc2-43ed-bf83-ef0a9ce54963}</Project>
+      <Name>Wifi.PlaylistEditor.Types</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
