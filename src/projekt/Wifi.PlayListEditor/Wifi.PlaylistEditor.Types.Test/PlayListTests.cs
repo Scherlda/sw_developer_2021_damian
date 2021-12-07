@@ -50,5 +50,19 @@ namespace Wifi.PlaylistEditor.Types.Test
             Assert.That(result, Is.EqualTo("Gandalf"));
         }
 
+        [Test]
+        public void CreateDate_get()
+        {
+            //Arrange
+            var testDateTime = new DateTime(2000, 4, 10, 8, 9, 10);
+            _fixture = new Playlist("NoName", "Gandalf", testDateTime);
+
+            //Act
+            var result = _fixture.CreateDate;
+
+            //Assert
+            Assert.That(result, Is.EqualTo(testDateTime));
+        }
+
     }
 }
