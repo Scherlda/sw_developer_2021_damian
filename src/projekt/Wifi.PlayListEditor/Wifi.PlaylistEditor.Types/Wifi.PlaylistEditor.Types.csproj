@@ -47,7 +47,11 @@
     <Compile Include="IPlaylistItem.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Playlist.cs" />
+    <Compile Include="PlaylistItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
