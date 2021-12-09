@@ -57,7 +57,7 @@ namespace Wifi.PlaylistEditor.Repositories.Test
             playlist.Add(mockedItem2.Object);
 
             // Act
-            var result = _fixture.Save(playlist);
+            var result = _fixture.Save(playlist, @"C:opt\playlist\");
 
             // Assert
             Assert.That(result, Is.True);
