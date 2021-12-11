@@ -33,31 +33,29 @@
             this.btn_Image = new FontAwesome.Sharp.IconButton();
             this.btn_Video = new FontAwesome.Sharp.IconButton();
             this.btn_Music = new FontAwesome.Sharp.IconButton();
-            this.btn_Items = new FontAwesome.Sharp.IconButton();
-            this.btn_File = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_MenuBurger = new FontAwesome.Sharp.IconButton();
             this.pictureBox_Logo = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.menuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_TopMenue = new System.Windows.Forms.Panel();
             this.btn_MinimizeApp = new FontAwesome.Sharp.IconButton();
             this.btn_MaximizeApp = new FontAwesome.Sharp.IconButton();
             this.btn_CloseApp = new FontAwesome.Sharp.IconButton();
             this.panel_SongDetails = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_ControlLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.panel_TopMenue.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,10 +65,8 @@
             this.panel_ControlLeft.Controls.Add(this.btn_Image);
             this.panel_ControlLeft.Controls.Add(this.btn_Video);
             this.panel_ControlLeft.Controls.Add(this.btn_Music);
-            this.panel_ControlLeft.Controls.Add(this.btn_Items);
-            this.panel_ControlLeft.Controls.Add(this.btn_File);
             this.panel_ControlLeft.Controls.Add(this.panel2);
-            this.panel_ControlLeft.Controls.Add(this.menuStrip1);
+            this.panel_ControlLeft.Controls.Add(this.menuStrip);
             this.panel_ControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_ControlLeft.Location = new System.Drawing.Point(0, 0);
             this.panel_ControlLeft.Margin = new System.Windows.Forms.Padding(0);
@@ -90,7 +86,7 @@
             this.btn_Image.IconColor = System.Drawing.Color.White;
             this.btn_Image.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Image.IconSize = 30;
-            this.btn_Image.Location = new System.Drawing.Point(0, 391);
+            this.btn_Image.Location = new System.Drawing.Point(0, 291);
             this.btn_Image.Name = "btn_Image";
             this.btn_Image.Size = new System.Drawing.Size(180, 50);
             this.btn_Image.TabIndex = 6;
@@ -112,7 +108,7 @@
             this.btn_Video.IconColor = System.Drawing.Color.White;
             this.btn_Video.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Video.IconSize = 30;
-            this.btn_Video.Location = new System.Drawing.Point(0, 341);
+            this.btn_Video.Location = new System.Drawing.Point(0, 241);
             this.btn_Video.Name = "btn_Video";
             this.btn_Video.Size = new System.Drawing.Size(180, 50);
             this.btn_Video.TabIndex = 5;
@@ -134,7 +130,7 @@
             this.btn_Music.IconColor = System.Drawing.Color.White;
             this.btn_Music.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_Music.IconSize = 30;
-            this.btn_Music.Location = new System.Drawing.Point(0, 291);
+            this.btn_Music.Location = new System.Drawing.Point(0, 191);
             this.btn_Music.Name = "btn_Music";
             this.btn_Music.Size = new System.Drawing.Size(180, 50);
             this.btn_Music.TabIndex = 4;
@@ -143,50 +139,6 @@
             this.btn_Music.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Music.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Music.UseVisualStyleBackColor = false;
-            // 
-            // btn_Items
-            // 
-            this.btn_Items.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Items.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Items.FlatAppearance.BorderSize = 0;
-            this.btn_Items.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Items.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Items.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Items.IconChar = FontAwesome.Sharp.IconChar.Coffee;
-            this.btn_Items.IconColor = System.Drawing.Color.White;
-            this.btn_Items.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Items.IconSize = 30;
-            this.btn_Items.Location = new System.Drawing.Point(0, 241);
-            this.btn_Items.Name = "btn_Items";
-            this.btn_Items.Size = new System.Drawing.Size(180, 50);
-            this.btn_Items.TabIndex = 3;
-            this.btn_Items.Tag = "Items";
-            this.btn_Items.Text = "Items";
-            this.btn_Items.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Items.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Items.UseVisualStyleBackColor = false;
-            // 
-            // btn_File
-            // 
-            this.btn_File.BackColor = System.Drawing.Color.Transparent;
-            this.btn_File.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_File.FlatAppearance.BorderSize = 0;
-            this.btn_File.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_File.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_File.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_File.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btn_File.IconColor = System.Drawing.Color.White;
-            this.btn_File.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_File.IconSize = 30;
-            this.btn_File.Location = new System.Drawing.Point(0, 191);
-            this.btn_File.Name = "btn_File";
-            this.btn_File.Size = new System.Drawing.Size(180, 50);
-            this.btn_File.TabIndex = 2;
-            this.btn_File.Tag = "File";
-            this.btn_File.Text = "File";
-            this.btn_File.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_File.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_File.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -227,16 +179,80 @@
             this.pictureBox_Logo.TabIndex = 0;
             this.pictureBox_Logo.TabStop = false;
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.itemsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(180, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemFile,
+            this.menuItemItems});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(180, 24);
+            this.menuStrip.TabIndex = 7;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // menuItemFile
+            // 
+            this.menuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemNew,
+            this.menuItemLoad,
+            this.menuItemSave,
+            this.menuItemQuit});
+            this.menuItemFile.Name = "menuItemFile";
+            this.menuItemFile.Size = new System.Drawing.Size(37, 20);
+            this.menuItemFile.Text = "File";
+            // 
+            // menuItemNew
+            // 
+            this.menuItemNew.Name = "menuItemNew";
+            this.menuItemNew.Size = new System.Drawing.Size(100, 22);
+            this.menuItemNew.Text = "New";
+            this.menuItemNew.Click += new System.EventHandler(this.menuItemNew_Click);
+            // 
+            // menuItemLoad
+            // 
+            this.menuItemLoad.Name = "menuItemLoad";
+            this.menuItemLoad.Size = new System.Drawing.Size(100, 22);
+            this.menuItemLoad.Text = "Load";
+            // 
+            // menuItemSave
+            // 
+            this.menuItemSave.Name = "menuItemSave";
+            this.menuItemSave.Size = new System.Drawing.Size(100, 22);
+            this.menuItemSave.Text = "Save";
+            // 
+            // menuItemQuit
+            // 
+            this.menuItemQuit.Name = "menuItemQuit";
+            this.menuItemQuit.Size = new System.Drawing.Size(100, 22);
+            this.menuItemQuit.Text = "Quit";
+            // 
+            // menuItemItems
+            // 
+            this.menuItemItems.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemAdd,
+            this.menuItemRemove,
+            this.menuItemClearAll});
+            this.menuItemItems.Name = "menuItemItems";
+            this.menuItemItems.Size = new System.Drawing.Size(48, 20);
+            this.menuItemItems.Text = "Items";
+            // 
+            // menuItemAdd
+            // 
+            this.menuItemAdd.Name = "menuItemAdd";
+            this.menuItemAdd.Size = new System.Drawing.Size(117, 22);
+            this.menuItemAdd.Text = "Add";
+            // 
+            // menuItemRemove
+            // 
+            this.menuItemRemove.Name = "menuItemRemove";
+            this.menuItemRemove.Size = new System.Drawing.Size(117, 22);
+            this.menuItemRemove.Text = "Remove";
+            // 
+            // menuItemClearAll
+            // 
+            this.menuItemClearAll.Name = "menuItemClearAll";
+            this.menuItemClearAll.Size = new System.Drawing.Size(117, 22);
+            this.menuItemClearAll.Text = "ClearAll";
             // 
             // panel_TopMenue
             // 
@@ -292,6 +308,7 @@
             // 
             this.btn_CloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_CloseApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            this.btn_CloseApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_CloseApp.FlatAppearance.BorderSize = 0;
             this.btn_CloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CloseApp.IconChar = FontAwesome.Sharp.IconChar.Times;
@@ -324,69 +341,6 @@
             this.panel1.Size = new System.Drawing.Size(812, 652);
             this.panel1.TabIndex = 3;
             // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.loadToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.quitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadToolStripMenuItem.Text = "Load";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // quitToolStripMenuItem
-            // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.quitToolStripMenuItem.Text = "Quit";
-            // 
-            // itemsToolStripMenuItem
-            // 
-            this.itemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem,
-            this.clearAllToolStripMenuItem});
-            this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.itemsToolStripMenuItem.Text = "Items";
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // clearAllToolStripMenuItem
-            // 
-            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearAllToolStripMenuItem.Text = "ClearAll";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newToolStripMenuItem.Text = "New";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,8 +358,8 @@
             this.panel_ControlLeft.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.panel_TopMenue.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -421,24 +375,22 @@
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btn_MenuBurger;
         private System.Windows.Forms.PictureBox pictureBox_Logo;
-        private FontAwesome.Sharp.IconButton btn_File;
-        private FontAwesome.Sharp.IconButton btn_Items;
         private FontAwesome.Sharp.IconButton btn_Image;
         private FontAwesome.Sharp.IconButton btn_Video;
         private FontAwesome.Sharp.IconButton btn_Music;
         private FontAwesome.Sharp.IconButton btn_CloseApp;
         private FontAwesome.Sharp.IconButton btn_MinimizeApp;
         private FontAwesome.Sharp.IconButton btn_MaximizeApp;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem itemsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFile;
+        private System.Windows.Forms.ToolStripMenuItem menuItemNew;
+        private System.Windows.Forms.ToolStripMenuItem menuItemLoad;
+        private System.Windows.Forms.ToolStripMenuItem menuItemSave;
+        private System.Windows.Forms.ToolStripMenuItem menuItemQuit;
+        private System.Windows.Forms.ToolStripMenuItem menuItemItems;
+        private System.Windows.Forms.ToolStripMenuItem menuItemAdd;
+        private System.Windows.Forms.ToolStripMenuItem menuItemRemove;
+        private System.Windows.Forms.ToolStripMenuItem menuItemClearAll;
     }
 }
 

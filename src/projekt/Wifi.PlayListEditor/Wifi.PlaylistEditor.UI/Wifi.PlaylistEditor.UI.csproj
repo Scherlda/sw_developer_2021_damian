@@ -66,6 +66,7 @@
       <DependentUpon>frmNewPlaylist.cs</DependentUpon>
     </Compile>
     <Compile Include="INewPlaylistCreator.cs" />
+    <Compile Include="NewPlaylistCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -106,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI.Helper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wifi.PlaylistEditor.Types\Wifi.PlaylistEditor.Types.csproj">
+      <Project>{F5DE1DED-BFC2-43ED-BF83-EF0A9CE54963}</Project>
+      <Name>Wifi.PlaylistEditor.Types</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

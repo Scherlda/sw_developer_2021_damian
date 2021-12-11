@@ -9,24 +9,13 @@ using Wifi.PlaylistEditor.Types;
 
 namespace Wifi.PlaylistEditor.Items
 {
-    public class Mp3Item : IPlaylistItem
+    public class PictureItem : IPlaylistItem
     {
         private readonly string _filePath;
         private string _title;
         private TimeSpan _duration;
         private string _artist;
         private Image _thumbnail;
-
-        public Mp3Item(string filePath)
-        {
-            _filePath = filePath;
-
-            if (File.Exists(_filePath))
-            {
-                ReadIdv3TagFromFile(_filePath);
-            }
-        }
-
 
         public string Title => _title;
 
@@ -37,7 +26,6 @@ namespace Wifi.PlaylistEditor.Items
         public string Path => _filePath;
 
         public Image Thumbnail => _thumbnail;
-
 
         private void ReadIdv3TagFromFile(string filePath)
         {

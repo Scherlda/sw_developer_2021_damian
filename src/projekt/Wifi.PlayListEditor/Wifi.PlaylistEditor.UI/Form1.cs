@@ -223,5 +223,10 @@ namespace Wifi.PlaylistEditor.UI
             base.WndProc(ref m);
         }
 
+        private void menuItemNew_Click(object sender, EventArgs e)
+        {
+            frmNewPlaylist frmNewPlaylist = new frmNewPlaylist();
+            frmNewPlaylist.ShowDialog();
+        }
     }
 }

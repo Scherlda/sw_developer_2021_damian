@@ -10,7 +10,7 @@ namespace Wifi.PlaylistEditor.UI
     public interface INewPlaylistCreator
     {
         string Title { get; }
-        string Autor { get; }
+        string Author { get; }
         DateTime CreateAt { get; }
         DialogResult OpenDialog();
     }
