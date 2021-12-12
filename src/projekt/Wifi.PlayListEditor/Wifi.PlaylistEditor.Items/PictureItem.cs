@@ -19,7 +19,7 @@ namespace Wifi.PlaylistEditor.Items
 
         public string Title => _title;
 
-        public string Artist => _artist;
+        public string Arthist => _artist;
 
         public TimeSpan Duration => _duration;
 

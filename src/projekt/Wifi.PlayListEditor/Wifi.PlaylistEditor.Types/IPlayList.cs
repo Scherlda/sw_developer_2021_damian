@@ -12,7 +12,7 @@ namespace Wifi.PlaylistEditor.Types
         /// Noch schreiben
         /// </summary>
         string Name { get; }
-        string Autor { get; }
+        string Author { get; }
         DateTime CreateDate { get; }
         TimeSpan Duration { get; }
         IEnumerable<IPlaylistItem> Items { get; }

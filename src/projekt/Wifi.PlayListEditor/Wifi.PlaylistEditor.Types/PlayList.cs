@@ -31,7 +31,7 @@ namespace Wifi.PlaylistEditor.Types
         {
             get { return _name; }
         }
-        public string Autor
+        public string Author
         {
             get { return _autor;}
         }

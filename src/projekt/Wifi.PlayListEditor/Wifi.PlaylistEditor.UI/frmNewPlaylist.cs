@@ -81,6 +81,14 @@ namespace Wifi.PlaylistEditor.UI
         {               
             if (OpenDialog().Equals(DialogResult.OK))
             {
+                string playlistName = textBox_NPLTitle.Text;
+                string playlistAuthor = textBox_NPLAuthor.Text;
+
+                var Playlist = new Playlist(playlistName, playlistAuthor);
+
+                //_title = playlistName;
+                //_author = playlistAuthor;
+                //_createAt = DateTime.Now;
                 Close();
             }
         }

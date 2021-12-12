@@ -34,7 +34,7 @@ namespace Wifi.PlaylistEditor.Types.Test
             _fixture = new Playlist("NoName", "Gandalf");
 
             //Act
-            var result = _fixture.Autor;
+            var result = _fixture.Author;
 
             //Assert
             Assert.That(result, Is.EqualTo("Gandalf"));

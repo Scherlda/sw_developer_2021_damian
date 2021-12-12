@@ -21,6 +21,11 @@ namespace Wifi.PlaylistEditor.Repositories
         private const string CREATEDATE_COMMENT_KEY = "PLAYLIST-CreatedAt: ";
         private IPlaylistItemFactory _itemFactory;
 
+        public M3uRepository(IPlaylistItemFactory itemFactory)
+        {
+            _itemFactory = itemFactory;
+        }
+
 
         public string Extension => ".m3u";
 
@@ -109,7 +114,7 @@ namespace Wifi.PlaylistEditor.Repositories
             var m3uplaylist = new M3uPlaylist();
             m3uplaylist.IsExtended = true;
 
-            m3uplaylist.Comments.Add($"{AUTHOR_COMMENT_KEY}{playlist.Autor}");
+            m3uplaylist.Comments.Add($"{AUTHOR_COMMENT_KEY}{playlist.Author}");
             m3uplaylist.Comments.Add($"{NAME_COMMENT_KEY}{playlist.Name}");
             m3uplaylist.Comments.Add($"{CREATEDATE_COMMENT_KEY}{playlist.CreateDate.ToString(DATE_FORMAT_STRING)}");
 
@@ -117,7 +122,7 @@ namespace Wifi.PlaylistEditor.Repositories
             {
                 var newM3uItem = new M3uPlaylistEntry
                 {
-                    AlbumArtist = item.Artist,
+                    AlbumArtist = item.Arthist,
                     Title = item.Title,
                     Path = item.Path,
                     Duration = item.Duration,

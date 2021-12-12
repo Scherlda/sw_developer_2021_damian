@@ -10,7 +10,7 @@ namespace Wifi.PlaylistEditor.Types
     public interface IPlaylistItem
     {
         string Title { get; }
-        string Artist { get; }
+        string Arthist { get; }
         TimeSpan Duration { get; }
         string Path { get; }
         Image Thumbnail { get; }
