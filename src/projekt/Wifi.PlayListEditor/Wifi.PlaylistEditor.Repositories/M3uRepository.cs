@@ -57,30 +57,6 @@ namespace Wifi.PlaylistEditor.Repositories
             return playlist;
         }
 
-        public bool Save(IPlaylist playlist, string filePath)
-        {
-            if (playlist == null || string.IsNullOrEmpty(filePath))
-            {
-                return false;
-            }
-
-            filePath = FixFilePathExtension(filePath);
-
-            //convert
-            M3uPlaylist m3uplaylist = MapToEntity(playlist);
-
-            //create filecontent and write
-            var content = new M3uContent();
-            var stringContent = content.ToText(m3uplaylist);
-
-            using (var sw = new StreamWriter(filePath, false))
-            {
-                sw.WriteLine(stringContent);
-            }
-
-            return true;
-        }
-
         private IPlaylist MapToDomain(M3uPlaylist m3uplaylist)
         {
             //die Kommentare werden leider in einem Item abgelegt und nicht in der Playlist Ebene
@@ -108,6 +84,32 @@ namespace Wifi.PlaylistEditor.Repositories
 
             return playlist;
         }
+
+        public bool Save(IPlaylist playlist, string filePath)
+        {
+            if (playlist == null || string.IsNullOrEmpty(filePath))
+            {
+                return false;
+            }
+
+            filePath = FixFilePathExtension(filePath);
+
+            //convert
+            M3uPlaylist m3uplaylist = MapToEntity(playlist);
+
+            //create filecontent and write
+            var content = new M3uContent();
+            var stringContent = content.ToText(m3uplaylist);
+
+            using (var sw = new StreamWriter(filePath, false))
+            {
+                sw.WriteLine(stringContent);
+            }
+
+            return true;
+        }
+
+
 
         private static M3uPlaylist MapToEntity(IPlaylist playlist)
         {

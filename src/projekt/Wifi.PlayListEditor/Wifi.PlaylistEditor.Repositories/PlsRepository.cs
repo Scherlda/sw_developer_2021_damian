@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Wifi.PlaylistEditor.Types;
+using PlaylistsNET.Models;
 
 namespace Wifi.PlaylistEditor.Repositories
 {
@@ -19,22 +20,33 @@ namespace Wifi.PlaylistEditor.Repositories
             throw new NotImplementedException();
         }
 
-        public bool Save(IPlaylist playlist, string FilePath)
+        public bool Save(IPlaylist playlist, string filePath)
         {
-            if (playlist == null || string.IsNullOrEmpty(FilePath))
+            if (playlist == null || string.IsNullOrEmpty(filePath))
             {
                 return false;
             }
 
-            filePath = FixFilePathExtension(FilePath);
+            filePath = FixFilePathExtension(filePath);
 
-
+            PlaylistsNET.Models.PlsPlaylist plsPlaylist = MapToEntity(playlist);
 
 
             return true;
         }
 
-        private object FixFilePathExtension(string filePath)
+        private static PlaylistsNET.Models.PlsPlaylist MapToEntity(IPlaylist playlist)
+        {
+            var plsPlaylist = new PlsPlaylist();
+
+            var blabla = plsPlaylist; 
+            
+            
+
+            return plsPlaylist;
+        }
+
+        private string FixFilePathExtension(string filePath)
         {
             var fi = new FileInfo(filePath);
             if (fi.Extension != Extension)

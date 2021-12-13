@@ -22,15 +22,7 @@ namespace Wifi.PlaylistEditor.Factories.Test
         [Test]
         public void Create_get()
         {
-            //Arange
-            //var testCreate = new PlaylistItemFactory().Create;
-            var erg = _fixture.Create(@"c:\opt\testfile.mp3");
-
-            //Act
-            //var result = _fixture.
-
-            //Assert
-            //Assert.That(erg, );
+            
         }
         
     }
