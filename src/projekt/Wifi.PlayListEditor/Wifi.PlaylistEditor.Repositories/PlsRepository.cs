@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Wifi.PlaylistEditor.Types;
 
 namespace Wifi.PlaylistEditor.Repositories
@@ -25,7 +26,30 @@ namespace Wifi.PlaylistEditor.Repositories
                 return false;
             }
 
+            filePath = FixFilePathExtension(FilePath);
+
+
+
+
             return true;
+        }
+
+        private object FixFilePathExtension(string filePath)
+        {
+            var fi = new FileInfo(filePath);
+            if (fi.Extension != Extension)
+            {
+                if (!string.IsNullOrEmpty(fi.Extension))
+                {
+                    filePath = filePath.Replace(fi.Extension, Extension);
+                }
+                else
+                {
+                    filePath = filePath + Extension;
+                }
+            }
+
+            return filePath;
         }
     }
 }
