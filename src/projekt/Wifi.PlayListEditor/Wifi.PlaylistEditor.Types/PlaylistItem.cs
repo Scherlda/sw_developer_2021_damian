@@ -56,3 +56,4 @@ namespace Wifi.PlaylistEditor.Types
         }
     }
 }
+

@@ -48,29 +48,35 @@ namespace Wifi.PlaylistEditor.UI
 
 
 
-        public string Title => _title;
+        public string Title => textBox_NPLTitle.Text;
 
-        public string Author => _author;
+        public string Author => textBox_NPLAuthor.Text;
 
         public DateTime CreateAt => _createAt;
 
         public DialogResult OpenDialog()
         {
-            if (textBox_NPLTitle.Text == String.Empty || textBox_NPLAuthor.Text == string.Empty)
-            {
-                MessageBox.Show("Es wurde nicht alles eingegeben");
-                return DialogResult.Retry;
-            }
-            else
-            {
-                MessageBox.Show("Playlist erstellt!");
-                return DialogResult.OK;
+            textBox_NPLTitle.Text = string.Empty;
+            textBox_NPLAuthor.Text = string.Empty;
+            textBox_NPLTitle.Focus();
+            return this.ShowDialog();
 
-            }
+            //if (textBox_NPLTitle.Text == String.Empty || textBox_NPLAuthor.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Es wurde nicht alles eingegeben");
+            //    return DialogResult.Retry;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Playlist erstellt!");
+            //    return DialogResult.OK;
+
+            //}
             
         }
 
 
+        //Button Definition
         private void btn_NewPlaylistCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -79,8 +85,17 @@ namespace Wifi.PlaylistEditor.UI
 
         private void btn_NewPlaylistCreate_Click(object sender, EventArgs e)
         {               
-            if (OpenDialog().Equals(DialogResult.OK))
-            {
+
+            //if (OpenDialog() == DialogResult.OK)
+            //{
+
+                if (string.IsNullOrEmpty(textBox_NPLTitle.Text) || string.IsNullOrEmpty(textBox_NPLAuthor.Text))
+                {
+                    return;
+                }
+                _createAt = DateTime.Now;
+
+                DialogResult = DialogResult.OK;
                 string playlistName = textBox_NPLTitle.Text;
                 string playlistAuthor = textBox_NPLAuthor.Text;
 
@@ -89,10 +104,12 @@ namespace Wifi.PlaylistEditor.UI
                 //_title = playlistName;
                 //_author = playlistAuthor;
                 //_createAt = DateTime.Now;
+                
                 Close();
-            }
+            //}
         }
 
+        //Text Box Definition
         private void textBox_NPLTitle_TextChanged(object sender, EventArgs e)
         {
 
