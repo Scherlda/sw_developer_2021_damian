@@ -39,6 +39,8 @@ namespace Wifi.PlaylistEditor.Factories
                     //repository = new JsonReposotory(_playlistItemFactory);
                     break;
             }
+
+            return repository;
         }
     }
 }

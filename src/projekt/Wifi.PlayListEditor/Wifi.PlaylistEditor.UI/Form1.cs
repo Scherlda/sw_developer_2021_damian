@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wifi.PlaylistEditor.Factories;
 using Wifi.PlaylistEditor.Types;
+using System.Threading.Tasks;
 
 namespace Wifi.PlaylistEditor.UI
 {
@@ -22,7 +23,7 @@ namespace Wifi.PlaylistEditor.UI
 
         //Fields
         private int borderSize = 2;
-        private IRepository _repositoryFactory;
+        private IRepositoryFactory _repositoryFactory;
         private PlaylistItemFactory itemFactory;
         private RepositoryFactory repositoryFactory;
 
@@ -382,6 +383,10 @@ namespace Wifi.PlaylistEditor.UI
             }
             //F12 => Geht zur definition und mit strg + - kommt man wieder zurück
             IRepository repository = _repositoryFactory.Create(saveFileDialog1.FileName);
+            if (repository != null)
+            {
+                repository.Save(_playlist, saveFileDialog1.FileName);
+            }
         }
     }
 }

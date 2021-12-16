@@ -66,7 +66,6 @@
       <DependentUpon>frmNewPlaylist.cs</DependentUpon>
     </Compile>
     <Compile Include="INewPlaylistCreator.cs" />
-    <Compile Include="IRepositoryFactory.cs" />
     <Compile Include="NewPlaylistCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
