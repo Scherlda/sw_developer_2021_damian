@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wifi.PlaylistEditor.Factories;
 using Wifi.PlaylistEditor.Types;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace Wifi.PlaylistEditor.UI
 {
