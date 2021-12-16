@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Wifi.PlaylistEditor.Factories;
 using Wifi.PlaylistEditor.Repositories;
 using Wifi.PlaylistEditor.Types;
-using Wifi.PlaylistEditor.UI;
+//using Wifi.PlaylistEditor.UI;
 
 namespace Wifi.PlaylistEditor.Factories
 {
@@ -19,6 +19,13 @@ namespace Wifi.PlaylistEditor.Factories
         {
             _playlistItemFactory = playlistItemFactory;
         }
+
+        public IEnumerable<IFileIdentifier> AvailableTypes => new IFileIdentifier[]
+        {
+            new M3uRepository(_playlistItemFactory),
+            new JsonRepository(_playlistItemFactory),
+        };
+
         public IRepository Create(string fileName)
         {
             IRepository repository = null;
@@ -29,18 +36,20 @@ namespace Wifi.PlaylistEditor.Factories
             }
 
             var extension = Path.GetExtension(fileName);
-            switch (extension)
-            {
-                case ".m3u":
-                    repository = new M3uRepository(_playlistItemFactory);
-                    break;
+            //switch (extension)
+            //{
+            //    case ".m3u":
+            //        repository = new M3uRepository(_playlistItemFactory);
+            //        break;
 
-                case ".json":
-                    //repository = new JsonReposotory(_playlistItemFactory);
-                    break;
-            }
+            //    case ".json":
+            //        //repository = new JsonReposotory(_playlistItemFactory);
+            //        break;
+            //}
 
-            return repository;
+            return (IRepository)AvailableTypes.FirstOrDefault(x => x.Extension == extension);
+
+            //return repository;
         }
     }
 }

@@ -52,13 +52,13 @@
             this.btn_MaximizeApp = new FontAwesome.Sharp.IconButton();
             this.btn_CloseApp = new FontAwesome.Sharp.IconButton();
             this.panel_SongDetails = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.CreatorInfo = new System.Windows.Forms.Label();
-            this.lv_Center_AllItems = new System.Windows.Forms.ListView();
-            this.lbl_RightPlaylistName = new System.Windows.Forms.Label();
-            this.lbl_RightPlaylistDuration = new System.Windows.Forms.Label();
-            this.lbl_RightPlaylistAuthor = new System.Windows.Forms.Label();
             this.lbl_RightPlaylistCreateDate = new System.Windows.Forms.Label();
+            this.lbl_RightPlaylistAuthor = new System.Windows.Forms.Label();
+            this.lbl_RightPlaylistDuration = new System.Windows.Forms.Label();
+            this.lbl_RightPlaylistName = new System.Windows.Forms.Label();
+            this.CreatorInfo = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lv_Center_AllItems = new System.Windows.Forms.ListView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -224,6 +224,7 @@
             this.menuItemLoad.Name = "menuItemLoad";
             this.menuItemLoad.Size = new System.Drawing.Size(180, 22);
             this.menuItemLoad.Text = "Load";
+            this.menuItemLoad.Click += new System.EventHandler(this.menuItemLoad_Click);
             // 
             // menuItemSave
             // 
@@ -251,21 +252,21 @@
             // menuItemAdd
             // 
             this.menuItemAdd.Name = "menuItemAdd";
-            this.menuItemAdd.Size = new System.Drawing.Size(180, 22);
+            this.menuItemAdd.Size = new System.Drawing.Size(117, 22);
             this.menuItemAdd.Text = "Add";
             this.menuItemAdd.Click += new System.EventHandler(this.menuItemAdd_Click);
             // 
             // menuItemRemove
             // 
             this.menuItemRemove.Name = "menuItemRemove";
-            this.menuItemRemove.Size = new System.Drawing.Size(180, 22);
+            this.menuItemRemove.Size = new System.Drawing.Size(117, 22);
             this.menuItemRemove.Text = "Remove";
             this.menuItemRemove.Click += new System.EventHandler(this.menuItemRemove_Click);
             // 
             // menuItemClearAll
             // 
             this.menuItemClearAll.Name = "menuItemClearAll";
-            this.menuItemClearAll.Size = new System.Drawing.Size(180, 22);
+            this.menuItemClearAll.Size = new System.Drawing.Size(117, 22);
             this.menuItemClearAll.Text = "ClearAll";
             this.menuItemClearAll.Click += new System.EventHandler(this.menuItemClearAll_Click);
             // 
@@ -354,52 +355,16 @@
             this.panel_SongDetails.TabIndex = 2;
             this.panel_SongDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_SongDetails_Paint);
             // 
-            // contextMenuStrip1
+            // lbl_RightPlaylistCreateDate
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // CreatorInfo
-            // 
-            this.CreatorInfo.AutoSize = true;
-            this.CreatorInfo.BackColor = System.Drawing.Color.Transparent;
-            this.CreatorInfo.Location = new System.Drawing.Point(68, 630);
-            this.CreatorInfo.Name = "CreatorInfo";
-            this.CreatorInfo.Size = new System.Drawing.Size(110, 13);
-            this.CreatorInfo.TabIndex = 0;
-            this.CreatorInfo.Text = "Autor: Damian Scherl ";
-            // 
-            // lv_Center_AllItems
-            // 
-            this.lv_Center_AllItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lv_Center_AllItems.HideSelection = false;
-            this.lv_Center_AllItems.Location = new System.Drawing.Point(180, 37);
-            this.lv_Center_AllItems.Name = "lv_Center_AllItems";
-            this.lv_Center_AllItems.Size = new System.Drawing.Size(812, 652);
-            this.lv_Center_AllItems.TabIndex = 5;
-            this.lv_Center_AllItems.UseCompatibleStateImageBehavior = false;
-            // 
-            // lbl_RightPlaylistName
-            // 
-            this.lbl_RightPlaylistName.AutoSize = true;
-            this.lbl_RightPlaylistName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RightPlaylistName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RightPlaylistName.Location = new System.Drawing.Point(23, 21);
-            this.lbl_RightPlaylistName.Name = "lbl_RightPlaylistName";
-            this.lbl_RightPlaylistName.Size = new System.Drawing.Size(150, 18);
-            this.lbl_RightPlaylistName.TabIndex = 5;
-            this.lbl_RightPlaylistName.Text = "Das ist ein Platzhalter";
-            // 
-            // lbl_RightPlaylistDuration
-            // 
-            this.lbl_RightPlaylistDuration.AutoSize = true;
-            this.lbl_RightPlaylistDuration.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RightPlaylistDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RightPlaylistDuration.Location = new System.Drawing.Point(23, 85);
-            this.lbl_RightPlaylistDuration.Name = "lbl_RightPlaylistDuration";
-            this.lbl_RightPlaylistDuration.Size = new System.Drawing.Size(125, 18);
-            this.lbl_RightPlaylistDuration.TabIndex = 6;
-            this.lbl_RightPlaylistDuration.Text = "Die Playlist dauert";
+            this.lbl_RightPlaylistCreateDate.AutoSize = true;
+            this.lbl_RightPlaylistCreateDate.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RightPlaylistCreateDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RightPlaylistCreateDate.Location = new System.Drawing.Point(23, 204);
+            this.lbl_RightPlaylistCreateDate.Name = "lbl_RightPlaylistCreateDate";
+            this.lbl_RightPlaylistCreateDate.Size = new System.Drawing.Size(110, 15);
+            this.lbl_RightPlaylistCreateDate.TabIndex = 8;
+            this.lbl_RightPlaylistCreateDate.Text = "Playlist CreateDate";
             // 
             // lbl_RightPlaylistAuthor
             // 
@@ -413,22 +378,52 @@
             this.lbl_RightPlaylistAuthor.Text = "Playlist Author";
             this.lbl_RightPlaylistAuthor.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lbl_RightPlaylistCreateDate
+            // lbl_RightPlaylistDuration
             // 
-            this.lbl_RightPlaylistCreateDate.AutoSize = true;
-            this.lbl_RightPlaylistCreateDate.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RightPlaylistCreateDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RightPlaylistCreateDate.Location = new System.Drawing.Point(23, 204);
-            this.lbl_RightPlaylistCreateDate.Name = "lbl_RightPlaylistCreateDate";
-            this.lbl_RightPlaylistCreateDate.Size = new System.Drawing.Size(110, 15);
-            this.lbl_RightPlaylistCreateDate.TabIndex = 8;
-            this.lbl_RightPlaylistCreateDate.Text = "Playlist CreateDate";
+            this.lbl_RightPlaylistDuration.AutoSize = true;
+            this.lbl_RightPlaylistDuration.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RightPlaylistDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RightPlaylistDuration.Location = new System.Drawing.Point(23, 85);
+            this.lbl_RightPlaylistDuration.Name = "lbl_RightPlaylistDuration";
+            this.lbl_RightPlaylistDuration.Size = new System.Drawing.Size(125, 18);
+            this.lbl_RightPlaylistDuration.TabIndex = 6;
+            this.lbl_RightPlaylistDuration.Text = "Die Playlist dauert";
             // 
-            // openFileDialog1
+            // lbl_RightPlaylistName
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Multiselect = true;
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.lbl_RightPlaylistName.AutoSize = true;
+            this.lbl_RightPlaylistName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_RightPlaylistName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RightPlaylistName.Location = new System.Drawing.Point(23, 21);
+            this.lbl_RightPlaylistName.Name = "lbl_RightPlaylistName";
+            this.lbl_RightPlaylistName.Size = new System.Drawing.Size(150, 18);
+            this.lbl_RightPlaylistName.TabIndex = 5;
+            this.lbl_RightPlaylistName.Text = "Das ist ein Platzhalter";
+            // 
+            // CreatorInfo
+            // 
+            this.CreatorInfo.AutoSize = true;
+            this.CreatorInfo.BackColor = System.Drawing.Color.Transparent;
+            this.CreatorInfo.Location = new System.Drawing.Point(68, 630);
+            this.CreatorInfo.Name = "CreatorInfo";
+            this.CreatorInfo.Size = new System.Drawing.Size(110, 13);
+            this.CreatorInfo.TabIndex = 0;
+            this.CreatorInfo.Text = "Autor: Damian Scherl ";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lv_Center_AllItems
+            // 
+            this.lv_Center_AllItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lv_Center_AllItems.HideSelection = false;
+            this.lv_Center_AllItems.Location = new System.Drawing.Point(180, 37);
+            this.lv_Center_AllItems.Name = "lv_Center_AllItems";
+            this.lv_Center_AllItems.Size = new System.Drawing.Size(812, 652);
+            this.lv_Center_AllItems.TabIndex = 5;
+            this.lv_Center_AllItems.UseCompatibleStateImageBehavior = false;
             // 
             // imageList1
             // 

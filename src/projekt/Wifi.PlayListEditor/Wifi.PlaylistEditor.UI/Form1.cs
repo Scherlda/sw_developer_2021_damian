@@ -10,43 +10,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wifi.PlaylistEditor.Factories;
 using Wifi.PlaylistEditor.Types;
+using Wifi.PlaylistEditor.UI.Properties;
 //using System.Threading.Tasks;
 
 namespace Wifi.PlaylistEditor.UI
 {
     public partial class Form1 : Form
     {
-        private INewPlaylistCreator _newPlaylistCreator;
         private IPlaylist _playlist;
+        private INewPlaylistCreator _newPlaylistCreator;
         private IPlaylistItemFactory _itemFactory;
         private IRepositoryFactory _repositoyFactory;
+        
 
         //Fields
         private int borderSize = 2;
-        private IRepositoryFactory _repositoryFactory;
-        private PlaylistItemFactory itemFactory;
-        private RepositoryFactory repositoryFactory;
+        ////private RepositoryFactory _repositoryFactory;
+        //private PlaylistItemFactory itemFactory;
+        //private RepositoryFactory repositoryFactory;
 
 
         //Constructor
-        public Form1(IPlaylistItemFactory itemFactory, IRepositoryFactory _repositoryFactory)
+        public Form1(IPlaylistItemFactory itemFactory, IRepositoryFactory _repositoryFactory, INewPlaylistCreator newPlaylistCreator)
         {
             InitializeComponent();
-            
+
             //Start the Program with the Left Menu in Collapst Version
             CollapsMenu();
+            this.Padding = new System.Windows.Forms.Padding(borderSize);
             _newPlaylistCreator = new frmNewPlaylist();
             _itemFactory = itemFactory;
-            
-            this.Padding = new System.Windows.Forms.Padding(borderSize);
+
+
             //this.BackColor = Color.FromArgb(220, 193, 176);
         }
 
-        public Form1(PlaylistItemFactory itemFactory, RepositoryFactory repositoryFactory)
-        {
-            this.itemFactory = itemFactory;
-            this.repositoryFactory = repositoryFactory;
-        }
+        //public Form1(PlaylistItemFactory itemFactory, RepositoryFactory repositoryFactory)
+        //{
+        //    this.itemFactory = itemFactory;
+        //    this.repositoryFactory = repositoryFactory;
+        //}
 
         //Import the user32.dll from the System folder
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -277,7 +280,15 @@ namespace Wifi.PlaylistEditor.UI
             foreach (var playlist_Item in _playlist.Items)
             {
                 var listViewItem = new ListViewItem(playlist_Item.Title);
-                imageList1.Images.Add(playlist_Item.Thumbnail);
+                if (playlist_Item.Thumbnail != null)
+                {
+                    imageList1.Images.Add(playlist_Item.Thumbnail);
+                }
+                else
+                {
+                    imageList1.Images.Add(Resources.No_image);
+                }
+                //imageList1.Images.Add(playlist_Item.Thumbnail);
                 
                 listViewItem.ImageIndex = index;
                 listViewItem.Tag = playlist_Item;
@@ -314,8 +325,7 @@ namespace Wifi.PlaylistEditor.UI
             lbl_RightPlaylistCreateDate.Text = string.Empty;
         }
         private void panel_SongDetails_Paint(object sender, PaintEventArgs e)
-        {
-            
+        {            
 
         }
 
@@ -326,6 +336,8 @@ namespace Wifi.PlaylistEditor.UI
 
         private void menuItemAdd_Click(object sender, EventArgs e)
         {
+            ConfigureFileDialog(openFileDialog1, "Bitte Item auswählen:", true,
+                _itemFactory.AvailableTypes);
             if (openFileDialog1.ShowDialog() != DialogResult.OK)
             {
                 return;
@@ -337,17 +349,33 @@ namespace Wifi.PlaylistEditor.UI
                 if (newItem != null)
                 {
                     _playlist.Add(newItem);
-                    //EnablePlaylistControls(true);
+                    EnablePlaylistControls(true);
                 }
             }
 
             UpdateView();
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        private void ConfigureFileDialog(FileDialog fileDialog, string dialogTitle, 
+            bool enableMultiSelection, IEnumerable<IFileIdentifier> availableTypes)
         {
+            fileDialog.Title = dialogTitle;
+            if (fileDialog is OpenFileDialog openFileDialog)
+            {
+                openFileDialog.Multiselect = enableMultiSelection;
+            }
 
+            var filterString = string.Empty;
+            availableTypes.ToList().ForEach(x => filterString += $"{x.Description}|*{x.Extension}|");
+            filterString = filterString.Remove(filterString.Length - 1, 1);
+
+            fileDialog.Filter = filterString;
         }
+
+        //private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        //{
+
+        //}
 
         private void menuItemRemove_Click(object sender, EventArgs e)
         {
@@ -377,16 +405,42 @@ namespace Wifi.PlaylistEditor.UI
 
         private void menuItemSave_Click(object sender, EventArgs e)
         {
+            ConfigureFileDialog(openFileDialog1, "Playlist auswählen", false,
+                _repositoyFactory.AvailableTypes);
+
             if (saveFileDialog1.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
             //F12 => Geht zur definition und mit strg + - kommt man wieder zurück
-            IRepository repository = _repositoryFactory.Create(saveFileDialog1.FileName);
+            IRepository repository = _repositoyFactory.Create(saveFileDialog1.FileName);
             if (repository != null)
             {
                 repository.Save(_playlist, saveFileDialog1.FileName);
             }
+        }
+
+        private void menuItemLoad_Click(object sender, EventArgs e)
+        {
+            ConfigureFileDialog(openFileDialog1, "Playlist auswählen", false,
+                _repositoyFactory.AvailableTypes);
+
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            var repository = _repositoyFactory.Create(openFileDialog1.FileName);
+            if (repository == null)
+            {
+                //Nicht unterstütztes Dateiformat!!!!
+                return;
+            }
+
+            _playlist = repository.Load(openFileDialog1.FileName);
+            EnablePlaylistControls(true);
+            UpdateView();
+
         }
     }
 }

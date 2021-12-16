@@ -5,12 +5,19 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wifi.PlaylistEditor.Factories;
 using Wifi.PlaylistEditor.Types;
 
 namespace Wifi.PlaylistEditor.Repositories
 {
-    internal class JsonRepository : IRepository
+    public class JsonRepository : IRepository
     {
+        private IPlaylistItemFactory _itemFactory;
+        public JsonRepository(IPlaylistItemFactory itemFactory)
+        {
+            _itemFactory = itemFactory;
+        }
+
         public string Extension => ".json";
 
         public string Description => "Export in Json file";

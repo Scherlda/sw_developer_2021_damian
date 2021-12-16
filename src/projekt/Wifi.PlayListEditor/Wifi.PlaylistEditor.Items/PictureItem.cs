@@ -27,6 +27,10 @@ namespace Wifi.PlaylistEditor.Items
 
         public Image Thumbnail => _thumbnail;
 
+        public string Extension => throw new NotImplementedException();
+
+        public string Description => throw new NotImplementedException();
+
         private void ReadIdv3TagFromFile(string filePath)
         {
             var tfile = TagLib.File.Create(filePath);

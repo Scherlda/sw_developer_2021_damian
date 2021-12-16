@@ -9,6 +9,7 @@ namespace Wifi.PlaylistEditor.Factories
 {
     public interface IPlaylistItemFactory
     {
+        IEnumerable<IFileIdentifier> AvailableTypes { get; }
         IPlaylistItem Create(string filePath);
     }
 }
