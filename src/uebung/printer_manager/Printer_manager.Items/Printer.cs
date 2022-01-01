@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Printer_manager.Items
 {
-    public class Printer : INetworkHardware
+    public class Printer : INetworkCapableHardware
     {
         private bool _isMultiFunctional;
         private bool _hasMultiColor;

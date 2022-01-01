@@ -215,28 +215,28 @@
             // menuItemNew
             // 
             this.menuItemNew.Name = "menuItemNew";
-            this.menuItemNew.Size = new System.Drawing.Size(180, 22);
+            this.menuItemNew.Size = new System.Drawing.Size(100, 22);
             this.menuItemNew.Text = "New";
             this.menuItemNew.Click += new System.EventHandler(this.menuItemNew_Click);
             // 
             // menuItemLoad
             // 
             this.menuItemLoad.Name = "menuItemLoad";
-            this.menuItemLoad.Size = new System.Drawing.Size(180, 22);
+            this.menuItemLoad.Size = new System.Drawing.Size(100, 22);
             this.menuItemLoad.Text = "Load";
             this.menuItemLoad.Click += new System.EventHandler(this.menuItemLoad_Click);
             // 
             // menuItemSave
             // 
             this.menuItemSave.Name = "menuItemSave";
-            this.menuItemSave.Size = new System.Drawing.Size(180, 22);
+            this.menuItemSave.Size = new System.Drawing.Size(100, 22);
             this.menuItemSave.Text = "Save";
             this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
             // 
             // menuItemQuit
             // 
             this.menuItemQuit.Name = "menuItemQuit";
-            this.menuItemQuit.Size = new System.Drawing.Size(180, 22);
+            this.menuItemQuit.Size = new System.Drawing.Size(100, 22);
             this.menuItemQuit.Text = "Quit";
             // 
             // menuItemItems
@@ -424,6 +424,7 @@
             this.lv_Center_AllItems.Size = new System.Drawing.Size(812, 652);
             this.lv_Center_AllItems.TabIndex = 5;
             this.lv_Center_AllItems.UseCompatibleStateImageBehavior = false;
+            this.lv_Center_AllItems.SelectedIndexChanged += new System.EventHandler(this.lv_Center_AllItems_SelectedIndexChanged);
             // 
             // imageList1
             // 

@@ -442,5 +442,10 @@ namespace Wifi.PlaylistEditor.UI
             UpdateView();
 
         }
+
+        private void lv_Center_AllItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

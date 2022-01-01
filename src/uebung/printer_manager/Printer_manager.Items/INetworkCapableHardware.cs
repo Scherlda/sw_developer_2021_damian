@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Printer_manager.Items
 {
-    public interface INetworkHardware : IHardware
+    public interface INetworkCapableHardware : IHardware
     {
         string MacAddress { get; }
         bool HasStaticIPAddress { get; }

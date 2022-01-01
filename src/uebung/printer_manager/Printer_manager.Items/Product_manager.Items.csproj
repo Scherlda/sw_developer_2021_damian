@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="IHardware.cs" />
     <Compile Include="IItem.cs" />
-    <Compile Include="INetzworkHardware.cs" />
+    <Compile Include="INetworkCapableHardware.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
