@@ -12,7 +12,6 @@ namespace Product_manager.Items
 
         string Modelname { get; } 
         string Serial { get; }  //Seriennummer
-        string Status { get; }  //In Betrieb, Auf Lager, Beim Kunde, ...
 
     }
 }
