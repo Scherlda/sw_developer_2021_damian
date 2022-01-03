@@ -8,24 +8,107 @@ namespace Printer_manager.Items
 {
     public class PrinterItem : IPrinter
     {
-        //Sortierung!!!!!!!!!!!!!!!!!!!!!!1
-        private bool _hasMultiColor;
-        private EPrinterType _selectKindOfPrinter;
-        private string _modelName;
+        //Item
+        private string _name;        
         private string _manuFacturer;
-        private string _serial;
-        private string _name;
         private ItemStatus _status;
+        //Item-Optional
+        private string _userDescription; 
+        private double _price;
+        //Hardware
+        private string _modelName;        
+        private string _serial;
+        //NetworkCapatibleHardware
         private string _macAddres;
         private bool _hasStaticAddress; //wenn ja:
-        //Optionale Felder
-        private string _ipAddress;
-        private string _userDescription; 
-        private string _price;
+        private string _ipAddress; //Optional
 
-        public PrinterItem(bool hasMultiColor, EPrinterType selectKindOfPrinter, string modelName, string menuFacturer, string serial, string name, ItemStatus status, string macAddress, bool hasStaticAddress)
+        //Spezifisch - PrinterItem
+        private bool _hasMultiColor;
+        private EPrinterType _selectKindOfPrinter;
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, string modelName, string serial, string macAddress, bool hasStaticAddress, bool hasMultiColor, EPrinterType selectKindOfPrinter)
         {
+            _name = name;
+            _manuFacturer = manuFacturer;
+            _status = status;
+            _userDescription = String.Empty;
+            _price = 0.0;
+            _modelName = modelName;
+            _serial = serial;
+            _macAddres = macAddress;
+            _hasStaticAddress = hasStaticAddress;
+            _ipAddress = String.Empty;
+            _hasMultiColor = hasMultiColor;
+            _selectKindOfPrinter = selectKindOfPrinter;
+        }
 
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name,  manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _userDescription = userDescription;
+        }
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, double price,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name, manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _price = price;
+        }
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress, string ipAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name, manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _ipAddress = ipAddress;
+        }
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription, double price,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name, manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _userDescription = userDescription;
+            _price = price;
+        }
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress, string ipAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name, manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _userDescription = userDescription;
+            _ipAddress = ipAddress;
+        }
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, double price,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress, string ipAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name, manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _price = price;
+            _ipAddress= ipAddress;
+        }
+
+        public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription, double price,
+            string modelName, string serial,
+            string macAddress, bool hasStaticAddress, string ipAddress,
+            bool hasMultiColor, EPrinterType selectKindOfPrinter)
+            : this(name, manuFacturer, status, modelName, serial, macAddress, hasStaticAddress, hasMultiColor, selectKindOfPrinter)
+        {
+            _userDescription= userDescription;
+            _price = price;
+            _ipAddress = ipAddress;
         }
 
         public bool HasMulticolor => _hasMultiColor;
@@ -50,6 +133,6 @@ namespace Printer_manager.Items
 
         public ItemStatus Status => _status;
 
-        public string Price => _price;
+        public double Price => _price;
     }
 }
