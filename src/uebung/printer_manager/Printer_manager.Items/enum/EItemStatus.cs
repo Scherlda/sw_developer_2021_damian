@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum ItemStatus
+public enum EItemStatus
 {
     [Description("In use")] Inuse = 1,
     [Description("Repair")] Repair = 2,

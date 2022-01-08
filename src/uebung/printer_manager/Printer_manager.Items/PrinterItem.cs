@@ -11,7 +11,7 @@ namespace Printer_manager.Items
         //Item - Pflicht
         private string _name;        
         private string _manuFacturer;
-        private ItemStatus _status;
+        private EItemStatus _status;
         //Hardware - Pflicht
         private string _modelName;
         private string _serial;
@@ -23,12 +23,27 @@ namespace Printer_manager.Items
         private string _macAddres;
         private bool _hasStaticAddress; //wenn ja:
         private string _ipAddress;
-        //Spezifisch - PrinterItem
+        //Spezifisch - PrinterItem - Optional
         private bool _hasMultiColor;
         private EPrinterType _selectKindOfPrinter;
 
-        public PrinterItem(string name, string manuFacturer, ItemStatus status, string modelName, string serial, 
-            string macAddress, bool hasStaticAddress, bool hasMultiColor, EPrinterType selectKindOfPrinter,     //Optionale:
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">Name of the object</param>
+        /// <param name="manuFacturer">Who is the Manufacturer</param>
+        /// <param name="status">In use, Repair, Reserve</param>
+        /// <param name="modelName">Model of the object</param>
+        /// <param name="serial">Serial-Number of the object</param>
+        /// <param name="_userDescription">Users own description for the object</param>
+        /// <param name="_price">Price of the object</param>
+        /// <param name="_macAddress">Mac Address in a User specified format</param>
+        /// <param name="_hasStaticAddress">Does the objet have a static IP</param>
+        /// <param name="_ipAddress">IP of the object</param>
+        /// <param name="_hasMultiColor">Does the Printer have Multicolor</param>
+        /// <param name="_selectKindOfPrinter">Normal Printer, Multifunctional Printer, Label Printer</param>
+        public PrinterItem(string name, string manuFacturer, EItemStatus status, string modelName, string serial, 
+           /* string macAddress, bool hasStaticAddress, bool hasMultiColor, EPrinterType selectKindOfPrinter,  */   //Optionale:
             string _userDescription = " ", double _price = 0.00, string _macAddress = " ", bool _hasStaticAddress = false, 
             string _ipAddress = " ", bool _hasMultiColor = false, EPrinterType _selectKindOfPrinter = EPrinterType.NormalPrinter)
         {
@@ -46,7 +61,7 @@ namespace Printer_manager.Items
             //_selectKindOfPrinter = selectKindOfPrinter;
         }
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status, string userDescription,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -55,7 +70,7 @@ namespace Printer_manager.Items
         //    _userDescription = userDescription;
         //}
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status, double price,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status, double price,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -64,7 +79,7 @@ namespace Printer_manager.Items
         //    _price = price;
         //}
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress, string ipAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -73,7 +88,7 @@ namespace Printer_manager.Items
         //    _ipAddress = ipAddress;
         //}
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription, double price,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status, string userDescription, double price,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -83,7 +98,7 @@ namespace Printer_manager.Items
         //    _price = price;
         //}
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status, string userDescription,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress, string ipAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -93,7 +108,7 @@ namespace Printer_manager.Items
         //    _ipAddress = ipAddress;
         //}
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status, double price,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status, double price,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress, string ipAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -103,7 +118,7 @@ namespace Printer_manager.Items
         //    _ipAddress= ipAddress;
         //}
 
-        //public PrinterItem(string name, string manuFacturer, ItemStatus status, string userDescription, double price,
+        //public PrinterItem(string name, string manuFacturer, EItemStatus status, string userDescription, double price,
         //    string modelName, string serial,
         //    string macAddress, bool hasStaticAddress, string ipAddress,
         //    bool hasMultiColor, EPrinterType selectKindOfPrinter)
@@ -134,7 +149,7 @@ namespace Printer_manager.Items
 
         public string Manufacturer => _manuFacturer;
 
-        public ItemStatus Status => _status;
+        public EItemStatus Status => _status;
 
         public double Price => _price;
     }

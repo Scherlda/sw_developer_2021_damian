@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="enum\EPrinterType.cs" />
-    <Compile Include="enum\ItemStatus.cs" />
+    <Compile Include="enum\EItemStatus.cs" />
     <Compile Include="IPrinter.cs" />
     <Compile Include="IHardware.cs" />
     <Compile Include="IItem.cs" />

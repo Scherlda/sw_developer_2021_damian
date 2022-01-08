@@ -12,7 +12,7 @@ namespace Printer_manager.Items
         string UserDescription { get; }
         string Manufacturer { get; }
 
-        ItemStatus Status { get; }  //In Betrieb, Auf Lager, Beim Kunde, ...
+        EItemStatus Status { get; }  //In Betrieb, Auf Lager, Beim Kunde, ...
         double Price { get; } //Soll Optional sein
     }
 }
