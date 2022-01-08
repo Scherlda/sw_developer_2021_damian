@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace Printer_manager.Items
 {
+    /// <summary>
+    /// The Printer Item
+    /// Definies the attributes of an Printer object
+    /// </summary>
     public class PrinterItem : IPrinter
     {
-        //Item - Pflicht
+        //Item - Required field
         private string _name;        
         private string _manuFacturer;
         private EItemStatus _status;
-        //Hardware - Pflicht
+        //Hardware - Required field
         private string _modelName;
         private string _serial;
 
-        //Item-Optional
+        //Item - Optional
         private string _userDescription; 
         private double _price;        
         //NetworkCapatibleHardware - Optional
@@ -28,7 +32,7 @@ namespace Printer_manager.Items
         private EPrinterType _selectKindOfPrinter;
 
         /// <summary>
-        /// 
+        /// Definies a Printer object with required and optional fields. 
         /// </summary>
         /// <param name="name">Name of the object</param>
         /// <param name="manuFacturer">Who is the Manufacturer</param>
@@ -129,6 +133,7 @@ namespace Printer_manager.Items
         //    _ipAddress = ipAddress;
         //}
 
+        
         public bool HasMulticolor => _hasMultiColor;
 
         public EPrinterType SelectKindOfPrinter => _selectKindOfPrinter;

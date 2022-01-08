@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Printer_manager.Items
 {
+    /// <summary>
+    /// The Main obejct for each object
+    /// </summary>
     public interface IItem
     {
         string Name { get; }

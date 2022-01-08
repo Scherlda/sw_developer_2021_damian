@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Printer_manager.Items\Product_manager.Items.csproj">
+      <Project>{dfe80358-aff8-411e-8136-3e3ecfd15ab5}</Project>
+      <Name>Product_manager.Items</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+/// <summary>
+/// Definies the Type of Printer
+/// </summary>
 public enum EPrinterType
 {
     [Description("Normal Printer")] NormalPrinter = 1,

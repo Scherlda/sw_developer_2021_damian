@@ -17,5 +17,21 @@ namespace Product_managerUI
             InitializeComponent();
         }
 
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_status.DataSource = Enum.GetValues(typeof(EItemStatus));
+            comboBox_status.SelectedItem = EItemStatus.Inuse;
+
+        }
     }
 }

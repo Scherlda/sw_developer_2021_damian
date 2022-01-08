@@ -7,6 +7,9 @@ using Product_manager.Items;
 
 namespace Printer_manager.Items
 {
+    /// <summary>
+    /// Interface for Printer - finaly, this parameter are optional
+    /// </summary>
     public interface IPrinter : INetworkCapableHardware
     {
         bool HasMulticolor { get; }
