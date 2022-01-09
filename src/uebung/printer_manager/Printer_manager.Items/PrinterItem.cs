@@ -48,14 +48,14 @@ namespace Printer_manager.Items
         /// <param name="_selectKindOfPrinter">Normal Printer, Multifunctional Printer, Label Printer</param>
         public PrinterItem(string name, string manuFacturer, EItemStatus status, string modelName, string serial, 
            /* string macAddress, bool hasStaticAddress, bool hasMultiColor, EPrinterType selectKindOfPrinter,  */   //Optionale:
-            string _userDescription = " ", double _price = 0.00, string _macAddress = " ", bool _hasStaticAddress = false, 
+            string userDescription = " ", double price = 0.00, string _macAddress = " ", bool _hasStaticAddress = false, 
             string _ipAddress = " ", bool _hasMultiColor = false, EPrinterType _selectKindOfPrinter = EPrinterType.NormalPrinter)
         {
             _name = name;
             _manuFacturer = manuFacturer;
             _status = status;
-            //_userDescription = String.Empty;
-            //_price = 0.0;
+            _userDescription = userDescription;
+             _price = price;
             _modelName = modelName;
             _serial = serial;
             //_macAddres = macAddress;
