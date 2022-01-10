@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lebewesen_main", "lebewesen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lebewesen_Item", "lebewesen_Item\lebewesen_Item.csproj", "{9370DDEF-432C-4D43-8EA8-9EFB423D2E0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lebewesen_Item.test", "lebewesen_Item.test\lebewesen_Item.test.csproj", "{C5C3B9CA-0378-4773-92D7-DD5FD199A064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9370DDEF-432C-4D43-8EA8-9EFB423D2E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9370DDEF-432C-4D43-8EA8-9EFB423D2E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9370DDEF-432C-4D43-8EA8-9EFB423D2E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C3B9CA-0378-4773-92D7-DD5FD199A064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C3B9CA-0378-4773-92D7-DD5FD199A064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C3B9CA-0378-4773-92D7-DD5FD199A064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C3B9CA-0378-4773-92D7-DD5FD199A064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

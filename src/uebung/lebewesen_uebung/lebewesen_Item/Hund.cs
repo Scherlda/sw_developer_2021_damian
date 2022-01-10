@@ -6,24 +6,16 @@ using System.Threading.Tasks;
 
 namespace lebewesen_Item
 {
-    public class Hund : ILebewesen
+    public class Hund : Lebewesen
     {
-        private int _anzahlBeine;
-        private int _koerperhoeheInCm;
-
-        public string GibLaut()
+        public Hund(int anzahlBeine, int koerperhoeheInCm) : base(anzahlBeine, koerperhoeheInCm)
         {
-            return "Wau, Wuff";
+            
         }
 
-        public int AnzahlBeine
+        override public string GibLaut()
         {
-           get { return _anzahlBeine;}
-        }
-
-        public int KoerperhoeheInCm
-        {
-            get { return _koerperhoeheInCm; }
+            return "Wau Wau";
         }
     }
 }

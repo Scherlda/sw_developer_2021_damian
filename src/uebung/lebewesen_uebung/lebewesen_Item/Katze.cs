@@ -6,24 +6,11 @@ using System.Threading.Tasks;
 
 namespace lebewesen_Item
 {
-    public class Katze : ILebewesen
+    public class Katze : Lebewesen
     {
-        private int _anzahlBeine;
-        private int _koerperhoeheInCm;
-
-        public string GibLaut()
+        override public string GibLaut()
         {
-            return "Miau, Schnurr";
-        }
-
-        public int AnzahlBeine
-        {
-           get { return _anzahlBeine;}
-        }
-
-        public int KoerperhoeheInCm
-        {
-            get { return _koerperhoeheInCm; }
+            return "Mew";
         }
     }
 }

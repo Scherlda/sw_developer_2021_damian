@@ -6,24 +6,11 @@ using System.Threading.Tasks;
 
 namespace lebewesen_Item
 {
-    public class Mensch : ILebewesen
+    public class Mensch : Lebewesen
     {
-        private int _anzahlBeine;
-        private int _koerperhoeheInCm;
-
-        public string GibLaut()
+        override public string GibLaut()
         {
-            return "blablabla";
-        }
-
-        public int AnzahlBeine
-        {
-           get { return _anzahlBeine;}
-        }
-
-        public int KoerperhoeheInCm
-        {
-            get { return _koerperhoeheInCm; }
+            return "Blablabla";
         }
     }
 }
