@@ -13,9 +13,9 @@ namespace lebewesen_main
         {
             List<ILebewesen> lebewesenList = new List<ILebewesen>();
 
-            lebewesenList.Add(new Hund());
-            lebewesenList.Add(new Katze());
-            lebewesenList.Add(new Mensch());
+            lebewesenList.Add(new Hund(4, 50));
+            lebewesenList.Add(new Katze(4, 30));
+            lebewesenList.Add(new Mensch(2, 170));
 
             foreach (var item in lebewesenList)
             {
