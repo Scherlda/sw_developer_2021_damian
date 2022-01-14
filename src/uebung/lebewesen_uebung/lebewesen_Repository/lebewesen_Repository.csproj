@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A773FBE4-2D28-49C3-ACC6-E0FA12C47E4E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>lebewesen_uebung</RootNamespace>
-    <AssemblyName>lebewesen_uebung</AssemblyName>
+    <ProjectGuid>{4B4059F7-D61B-41A1-B7B4-00BB7DB06EE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>lebewesen_Repository</RootNamespace>
+    <AssemblyName>lebewesen_Repository</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,20 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="TxtFileSave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\lebewesen_Item\lebewesen_Item.csproj">
-      <Project>{9370ddef-432c-4d43-8ea8-9efb423d2e0d}</Project>
+      <Project>{9370DDEF-432C-4D43-8EA8-9EFB423D2E0D}</Project>
       <Name>lebewesen_Item</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\lebewesen_Repository\lebewesen_Repository.csproj">
-      <Project>{4B4059F7-D61B-41A1-B7B4-00BB7DB06EE7}</Project>
-      <Name>lebewesen_Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
