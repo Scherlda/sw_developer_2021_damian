@@ -38,6 +38,9 @@ namespace Wifi.PlaylistEditor.Items
 
         public Image Thumbnail => _thumbnail;
 
+        public string Extension => ".mp3";
+
+        public string Description => "MP3 Mucis File";
 
         private void ReadIdv3TagFromFile(string filePath)
         {

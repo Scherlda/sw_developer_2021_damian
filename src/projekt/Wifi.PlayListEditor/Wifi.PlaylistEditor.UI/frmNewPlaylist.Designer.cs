@@ -54,6 +54,7 @@
             // btn_NewPlaylistCancel
             // 
             this.btn_NewPlaylistCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(193)))), ((int)(((byte)(176)))));
+            this.btn_NewPlaylistCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_NewPlaylistCancel.Location = new System.Drawing.Point(248, 125);
             this.btn_NewPlaylistCancel.Name = "btn_NewPlaylistCancel";
             this.btn_NewPlaylistCancel.Size = new System.Drawing.Size(75, 23);
@@ -127,6 +128,7 @@
             // frmNewPlaylist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.btn_NewPlaylistCancel;
             this.ClientSize = new System.Drawing.Size(384, 161);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox_NPLAuthor);
@@ -138,6 +140,7 @@
             this.MaximumSize = new System.Drawing.Size(400, 200);
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "frmNewPlaylist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Neue Playlist erzeugen";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

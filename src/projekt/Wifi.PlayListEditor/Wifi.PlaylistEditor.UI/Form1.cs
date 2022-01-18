@@ -8,27 +8,48 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Wifi.PlaylistEditor.Factories;
+using Wifi.PlaylistEditor.Types;
+using Wifi.PlaylistEditor.UI.Properties;
+//using System.Threading.Tasks;
 
 namespace Wifi.PlaylistEditor.UI
 {
     public partial class Form1 : Form
     {
+        private IPlaylist _playlist;
+        private INewPlaylistCreator _newPlaylistCreator;
+        private IPlaylistItemFactory _itemFactory;
+        private IRepositoryFactory _repositoyFactory;
+        
+
         //Fields
         private int borderSize = 2;
+        ////private RepositoryFactory _repositoryFactory;
+        //private PlaylistItemFactory itemFactory;
+        //private RepositoryFactory repositoryFactory;
+
 
         //Constructor
-        public Form1()
+        public Form1(IPlaylistItemFactory itemFactory, IRepositoryFactory _repositoryFactory, INewPlaylistCreator newPlaylistCreator)
         {
             InitializeComponent();
-            
+
             //Start the Program with the Left Menu in Collapst Version
             CollapsMenu();
-
-            
             this.Padding = new System.Windows.Forms.Padding(borderSize);
+            _newPlaylistCreator = new frmNewPlaylist();
+            _itemFactory = itemFactory;
+
+
             //this.BackColor = Color.FromArgb(220, 193, 176);
         }
+
+        //public Form1(PlaylistItemFactory itemFactory, RepositoryFactory repositoryFactory)
+        //{
+        //    this.itemFactory = itemFactory;
+        //    this.repositoryFactory = repositoryFactory;
+        //}
 
         //Import the user32.dll from the System folder
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -225,8 +246,206 @@ namespace Wifi.PlaylistEditor.UI
 
         private void menuItemNew_Click(object sender, EventArgs e)
         {
-            frmNewPlaylist frmNewPlaylist = new frmNewPlaylist();
-            frmNewPlaylist.ShowDialog();
+            if (_newPlaylistCreator.OpenDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            _playlist = new Playlist(_newPlaylistCreator.Title,
+                _newPlaylistCreator.Author,
+                _newPlaylistCreator.CreateAt);
+
+            UpdateView();
+            //frmNewPlaylist frmNewPlaylist = new frmNewPlaylist();
+            //frmNewPlaylist.ShowDialog();
+        }
+
+        private void UpdateView()
+        {
+            lbl_RightPlaylistName.Text = $"Name: {_playlist.Name}";
+            lbl_RightPlaylistDuration.Text = $"Duration: {_playlist.Duration}";
+            lbl_RightPlaylistAuthor.Text = $"Author: {_playlist.Author}";
+            lbl_RightPlaylistCreateDate.Text = $"Create Date: {_playlist.CreateDate}";
+            UpdateListViewItems();
+        }
+
+        private void UpdateListViewItems()
+        {
+            int index = 0;
+
+            lv_Center_AllItems.Items.Clear();
+            imageList1.Images.Clear();
+            lv_Center_AllItems.LargeImageList = imageList1;
+
+            foreach (var playlist_Item in _playlist.Items)
+            {
+                var listViewItem = new ListViewItem(playlist_Item.Title);
+                if (playlist_Item.Thumbnail != null)
+                {
+                    imageList1.Images.Add(playlist_Item.Thumbnail);
+                }
+                else
+                {
+                    imageList1.Images.Add(Resources.No_image);
+                }
+                //imageList1.Images.Add(playlist_Item.Thumbnail);
+                
+                listViewItem.ImageIndex = index;
+                listViewItem.Tag = playlist_Item;
+                
+                lv_Center_AllItems.Items.Add(listViewItem);
+                index++;
+
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ClearView();
+            //EnablePlaylistControls(false);
+        }
+
+        private void EnablePlaylistControls(bool isEnabled)
+        {
+            lv_Center_AllItems.Enabled = isEnabled;
+            menuItemItems.Enabled = isEnabled;
+            menuItemSave.Enabled = isEnabled;
+        }
+
+        private void ClearView()
+        {
+            lbl_RightPlaylistName.Text = string.Empty;
+            lbl_RightPlaylistDuration.Text = string.Empty;
+            lbl_RightPlaylistAuthor.Text = string.Empty;
+            lbl_RightPlaylistCreateDate.Text = string.Empty;
+        }
+        private void panel_SongDetails_Paint(object sender, PaintEventArgs e)
+        {            
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuItemAdd_Click(object sender, EventArgs e)
+        {
+            ConfigureFileDialog(openFileDialog1, "Bitte Item auswählen:", true,
+                _itemFactory.AvailableTypes);
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            foreach (var file in openFileDialog1.FileNames)
+            {
+                var newItem = _itemFactory.Create(file);
+                if (newItem != null)
+                {
+                    _playlist.Add(newItem);
+                    EnablePlaylistControls(true);
+                }
+            }
+
+            UpdateView();
+        }
+
+        private void ConfigureFileDialog(FileDialog fileDialog, string dialogTitle, 
+            bool enableMultiSelection, IEnumerable<IFileIdentifier> availableTypes)
+        {
+            fileDialog.Title = dialogTitle;
+            if (fileDialog is OpenFileDialog openFileDialog)
+            {
+                openFileDialog.Multiselect = enableMultiSelection;
+            }
+
+            var filterString = string.Empty;
+            availableTypes.ToList().ForEach(x => filterString += $"{x.Description}|*{x.Extension}|");
+            filterString = filterString.Remove(filterString.Length - 1, 1);
+
+            fileDialog.Filter = filterString;
+        }
+
+        //private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        //{
+
+        //}
+
+        private void menuItemRemove_Click(object sender, EventArgs e)
+        {
+            if (lv_Center_AllItems.SelectedItems == null || lv_Center_AllItems.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+            foreach (ListViewItem selectedItem in lv_Center_AllItems.SelectedItems)
+            {
+                var playlistItem = selectedItem.Tag as IPlaylistItem;
+
+                if (playlistItem != null)
+                {
+                    _playlist.Remove(playlistItem);
+                }
+            }
+
+            UpdateView();
+        }
+
+        private void menuItemClearAll_Click(object sender, EventArgs e)
+        {
+            _playlist.Clear();
+            UpdateView();
+        }
+
+        private void menuItemSave_Click(object sender, EventArgs e)
+        {
+            ConfigureFileDialog(openFileDialog1, "Playlist auswählen", false,
+                _repositoyFactory.AvailableTypes);
+
+            if (saveFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            //F12 => Geht zur definition und mit strg + - kommt man wieder zurück
+            IRepository repository = _repositoyFactory.Create(saveFileDialog1.FileName);
+            if (repository != null)
+            {
+                repository.Save(_playlist, saveFileDialog1.FileName);
+            }
+        }
+
+        private void menuItemLoad_Click(object sender, EventArgs e)
+        {
+            ConfigureFileDialog(openFileDialog1, "Playlist auswählen", false,
+                _repositoyFactory.AvailableTypes);
+
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            var repository = _repositoyFactory.Create(openFileDialog1.FileName);
+            if (repository == null)
+            {
+                //Nicht unterstütztes Dateiformat!!!!
+                return;
+            }
+
+            _playlist = repository.Load(openFileDialog1.FileName);
+            EnablePlaylistControls(true);
+            UpdateView();
+
+        }
+
+        private void lv_Center_AllItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -54,5 +54,10 @@ namespace Wifi.PlaylistEditor.Types
         {
             get { return _thumbnail; }
         }
+
+        public string Extension => throw new NotImplementedException();
+
+        public string Description => throw new NotImplementedException();
     }
 }
+

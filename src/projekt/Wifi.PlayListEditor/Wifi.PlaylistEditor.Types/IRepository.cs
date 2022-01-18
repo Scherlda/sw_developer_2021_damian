@@ -11,5 +11,6 @@ namespace Wifi.PlaylistEditor.Types
         IPlaylist Load(string filePath);
 
         bool Save(IPlaylist playlist, string FilePath);
+        
     }
 }
