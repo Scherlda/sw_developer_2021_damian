@@ -22,6 +22,7 @@ namespace Swd.BspArchitecture.Repository.Database
             }
 
             Message newMsg = new Message();
+            //Der AnzeigeText Wert darf nur einmal vorhanden sein, wenn der Wert bereits in der DB ist dann kommt ein Fehler
             newMsg.AnzeigeText = "Test1";
             newMsg.Sichtbar = true;
 
